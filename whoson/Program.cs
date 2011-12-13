@@ -5,6 +5,7 @@ using System.Text;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Data;
+using System.ServiceModel;
 
 using WhosOn.Library;
 using WhosOn.Library.LogonEventServiceReference;
@@ -28,6 +29,28 @@ namespace WhosOn.Client
             if (!EventLog.SourceExists(ProgramInfo.Product))
             {
                 EventLog.CreateEventSource(ProgramInfo.Product, "Application");
+            }
+        }
+
+        void Report(Exception exception)
+        {
+            if (options.Verbose)
+            {
+                Console.Error.WriteLine(
+                    ProgramInfo.ProgramName + ": (" + 
+                    exception.Source + "): " +
+                    exception.GetType() + ": " + 
+                    exception.Message + "\n" +
+                    exception.StackTrace
+                    );
+            }
+            else
+            {
+                Console.Error.WriteLine(
+                    ProgramInfo.ProgramName + ": " + 
+                    exception.GetType() + ": " +
+                    exception.Message
+                    );
             }
         }
 
@@ -55,7 +78,11 @@ namespace WhosOn.Client
             }
             catch (Win32Exception exception)
             {
-                Console.Error.WriteLine(exception);
+                Report(exception);
+            }
+            catch (Exception exception)
+            {
+                Report(exception);
             }
         }
 
@@ -82,13 +109,6 @@ namespace WhosOn.Client
                     output.SetFormat(new OutputFormatXML());
                     output.Write(events);
                     break;
-            }
-
-            if (events.Length > 0)
-            {
-                foreach (LogonEvent record in events)
-                {
-                }
             }
         }
 
@@ -122,15 +142,15 @@ namespace WhosOn.Client
 
         static void Main(string[] args)
         {
+            Program program = new Program();
             try
             {
-                Program program = new Program();
                 program.Parse(args);
                 program.Process();
             }
             catch (ArgumentException exception)
             {
-                Console.Error.WriteLine(ProgramInfo.ProgramName + ": " + exception.Message);
+                program.Report(exception);
             }
         }
     }

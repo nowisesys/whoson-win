@@ -85,6 +85,11 @@ namespace WhosOn.Client
             return format;
         }
 
+        public bool Verbose
+        {
+            get { return verbose; }
+        }
+
         /// <summary>
         /// Called to display application usage.
         /// </summary>
@@ -97,6 +102,7 @@ namespace WhosOn.Client
             Console.WriteLine("  -i,--logon:       Store logon event.");
             Console.WriteLine("  -o,--logout:      Store logoff event.");
             Console.WriteLine("  -l,--list:        List logon events (see filter and matching)");
+            Console.WriteLine("  -v,--verbose:     Be more verbose.");
             Console.WriteLine("  -h,--help:        Show this help");
             Console.WriteLine("  -V,--version:     Get version info.");
             Console.WriteLine("Filters:");
@@ -153,6 +159,10 @@ namespace WhosOn.Client
                 Option option = Option.GetOption(args[i]);
                 switch (option.Key)
                 {
+                    case "-v":
+                    case "--verbose":
+                        verbose = true;
+                        break;
                     case "-h":
                     case "--help":
                         Usage();
@@ -237,11 +247,11 @@ namespace WhosOn.Client
                     case "--ipaddr":
                         if (option.HasValue)
                         {
-                            filter.IpAaddres = option.Value;
+                            filter.IpAddress = option.Value;
                         }
                         else
                         {
-                            filter.IpAaddres = args[++i];
+                            filter.IpAddress = args[++i];
                         }
                         break;
                     case "--hw":
@@ -339,6 +349,7 @@ namespace WhosOn.Client
         private Reason reason = Reason.Unknown;
         private LogonEvent filter = new LogonEvent();
         private LogonEventMatch match = LogonEventMatch.Exact;
+        private bool verbose = false;
 
     }
 }
