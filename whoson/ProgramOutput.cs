@@ -34,7 +34,7 @@ namespace WhosOn.Client
             Console.WriteLine("User: {0}\\{1} (Event ID={2})", record.Username, record.Domain, record.EventID);
             Console.WriteLine(Separator);
             Console.WriteLine("\t  Computer: {0} (NetBIOS Name: {1})", record.Hostname, record.Workstation);
-            Console.WriteLine("\tIP-address: {0} (MAC-address: {1})", record.IpAaddres, record.HwAddress);
+            Console.WriteLine("\tIP-address: {0} (MAC-address: {1})", record.IpAddress, record.HwAddress);
             if (record.EndTime == DateTime.MinValue)
             {
                 Console.WriteLine("\t   Session: {0} -> [(still logged on)]", record.StartTime);
@@ -66,7 +66,7 @@ namespace WhosOn.Client
                 record.Username + "\t" +
                 record.Domain + "\t" +
                 record.HwAddress + "\t" +
-                record.IpAaddres + "\t" +
+                record.IpAddress + "\t" +
                 record.Hostname + "\t" +
                 record.Workstation + "\t" +
                 record.StartTime + "\t" +
@@ -94,7 +94,7 @@ namespace WhosOn.Client
                 record.Username + " " +
                 record.Domain + " " +
                 record.HwAddress + " " +
-                record.IpAaddres + " " +
+                record.IpAddress + " " +
                 record.Hostname + " " +
                 record.Workstation + " " +
                 record.StartTime + " " +
@@ -125,7 +125,7 @@ namespace WhosOn.Client
             Console.WriteLine("    </Logon>");
             Console.WriteLine("    <Computer>");
             Console.WriteLine("      <HwAddress>{0}</HwAddress>", record.HwAddress);
-            Console.WriteLine("      <IpAddress>{0}</IpAddress>", record.IpAaddres);
+            Console.WriteLine("      <IpAddress>{0}</IpAddress>", record.IpAddress);
             Console.WriteLine("      <Hostname>{0}</Hostname>", record.Hostname);
             Console.WriteLine("      <Workstation>{0}</Workstation>", record.Workstation);
             Console.WriteLine("    </Computer>");
