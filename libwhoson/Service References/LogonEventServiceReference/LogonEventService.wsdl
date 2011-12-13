@@ -61,7 +61,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Domain" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="HwAddress" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="IpAaddres" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IpAddress" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Hostname" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Workstation" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="StartTime" type="s:dateTime" />

@@ -17,7 +17,7 @@ namespace WhosOn.Library
             p.EventID = f.EventID;
             p.Hostname = f.Hostname;
             p.HwAddress = f.HwAddress;
-            p.IpAaddres = f.IpAaddres;
+            p.IpAddress = f.IpAddress;
             p.StartTime = f.StartTime;
             p.Username = f.Username;
             p.Workstation = f.Workstation;

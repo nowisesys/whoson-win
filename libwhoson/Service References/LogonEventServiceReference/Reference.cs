@@ -34,7 +34,7 @@ namespace WhosOn.Library.LogonEventServiceReference {
         private string HwAddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IpAaddresField;
+        private string IpAddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string HostnameField;
@@ -109,14 +109,14 @@ namespace WhosOn.Library.LogonEventServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string IpAaddres {
+        public string IpAddress {
             get {
-                return this.IpAaddresField;
+                return this.IpAddressField;
             }
             set {
-                if ((object.ReferenceEquals(this.IpAaddresField, value) != true)) {
-                    this.IpAaddresField = value;
-                    this.RaisePropertyChanged("IpAaddres");
+                if ((object.ReferenceEquals(this.IpAddressField, value) != true)) {
+                    this.IpAddressField = value;
+                    this.RaisePropertyChanged("IpAddress");
                 }
             }
         }
