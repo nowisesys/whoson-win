@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WhosOn.Library.LogonEventServiceReference {
+namespace WhosOn.Library.LogonAccountingServiceReference {
     using System.Runtime.Serialization;
     using System;
     
@@ -207,12 +207,12 @@ namespace WhosOn.Library.LogonEventServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://it.bmc.uu.se/whoson", ConfigurationName="LogonEventServiceReference.LogonEventServiceSoap")]
-    public interface LogonEventServiceSoap {
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://it.bmc.uu.se/whoson", ConfigurationName="LogonAccountingServiceReference.LogonAccountingServiceSoap")]
+    public interface LogonAccountingServiceSoap {
         
         // CODEGEN: Generating message contract since element name user from namespace http://it.bmc.uu.se/whoson is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://it.bmc.uu.se/whoson/CreateLogonEvent", ReplyAction="*")]
-        WhosOn.Library.LogonEventServiceReference.CreateLogonEventResponse CreateLogonEvent(WhosOn.Library.LogonEventServiceReference.CreateLogonEventRequest request);
+        WhosOn.Library.LogonAccountingServiceReference.CreateLogonEventResponse CreateLogonEvent(WhosOn.Library.LogonAccountingServiceReference.CreateLogonEventRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://it.bmc.uu.se/whoson/CloseLogonEvent", ReplyAction="*")]
         void CloseLogonEvent(int eventID);
@@ -222,11 +222,11 @@ namespace WhosOn.Library.LogonEventServiceReference {
         
         // CODEGEN: Generating message contract since element name user from namespace http://it.bmc.uu.se/whoson is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://it.bmc.uu.se/whoson/FindLogonEvent", ReplyAction="*")]
-        WhosOn.Library.LogonEventServiceReference.FindLogonEventResponse FindLogonEvent(WhosOn.Library.LogonEventServiceReference.FindLogonEventRequest request);
+        WhosOn.Library.LogonAccountingServiceReference.FindLogonEventResponse FindLogonEvent(WhosOn.Library.LogonAccountingServiceReference.FindLogonEventRequest request);
         
         // CODEGEN: Generating message contract since element name filter from namespace http://it.bmc.uu.se/whoson is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://it.bmc.uu.se/whoson/FindLogonEvents", ReplyAction="*")]
-        WhosOn.Library.LogonEventServiceReference.FindLogonEventsResponse FindLogonEvents(WhosOn.Library.LogonEventServiceReference.FindLogonEventsRequest request);
+        WhosOn.Library.LogonAccountingServiceReference.FindLogonEventsResponse FindLogonEvents(WhosOn.Library.LogonAccountingServiceReference.FindLogonEventsRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -235,12 +235,12 @@ namespace WhosOn.Library.LogonEventServiceReference {
     public partial class CreateLogonEventRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateLogonEvent", Namespace="http://it.bmc.uu.se/whoson", Order=0)]
-        public WhosOn.Library.LogonEventServiceReference.CreateLogonEventRequestBody Body;
+        public WhosOn.Library.LogonAccountingServiceReference.CreateLogonEventRequestBody Body;
         
         public CreateLogonEventRequest() {
         }
         
-        public CreateLogonEventRequest(WhosOn.Library.LogonEventServiceReference.CreateLogonEventRequestBody Body) {
+        public CreateLogonEventRequest(WhosOn.Library.LogonAccountingServiceReference.CreateLogonEventRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -279,12 +279,12 @@ namespace WhosOn.Library.LogonEventServiceReference {
     public partial class CreateLogonEventResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateLogonEventResponse", Namespace="http://it.bmc.uu.se/whoson", Order=0)]
-        public WhosOn.Library.LogonEventServiceReference.CreateLogonEventResponseBody Body;
+        public WhosOn.Library.LogonAccountingServiceReference.CreateLogonEventResponseBody Body;
         
         public CreateLogonEventResponse() {
         }
         
-        public CreateLogonEventResponse(WhosOn.Library.LogonEventServiceReference.CreateLogonEventResponseBody Body) {
+        public CreateLogonEventResponse(WhosOn.Library.LogonAccountingServiceReference.CreateLogonEventResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -311,12 +311,12 @@ namespace WhosOn.Library.LogonEventServiceReference {
     public partial class FindLogonEventRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="FindLogonEvent", Namespace="http://it.bmc.uu.se/whoson", Order=0)]
-        public WhosOn.Library.LogonEventServiceReference.FindLogonEventRequestBody Body;
+        public WhosOn.Library.LogonAccountingServiceReference.FindLogonEventRequestBody Body;
         
         public FindLogonEventRequest() {
         }
         
-        public FindLogonEventRequest(WhosOn.Library.LogonEventServiceReference.FindLogonEventRequestBody Body) {
+        public FindLogonEventRequest(WhosOn.Library.LogonAccountingServiceReference.FindLogonEventRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -351,12 +351,12 @@ namespace WhosOn.Library.LogonEventServiceReference {
     public partial class FindLogonEventResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="FindLogonEventResponse", Namespace="http://it.bmc.uu.se/whoson", Order=0)]
-        public WhosOn.Library.LogonEventServiceReference.FindLogonEventResponseBody Body;
+        public WhosOn.Library.LogonAccountingServiceReference.FindLogonEventResponseBody Body;
         
         public FindLogonEventResponse() {
         }
         
-        public FindLogonEventResponse(WhosOn.Library.LogonEventServiceReference.FindLogonEventResponseBody Body) {
+        public FindLogonEventResponse(WhosOn.Library.LogonAccountingServiceReference.FindLogonEventResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -367,12 +367,12 @@ namespace WhosOn.Library.LogonEventServiceReference {
     public partial class FindLogonEventResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public WhosOn.Library.LogonEventServiceReference.LogonEvent FindLogonEventResult;
+        public WhosOn.Library.LogonAccountingServiceReference.LogonEvent FindLogonEventResult;
         
         public FindLogonEventResponseBody() {
         }
         
-        public FindLogonEventResponseBody(WhosOn.Library.LogonEventServiceReference.LogonEvent FindLogonEventResult) {
+        public FindLogonEventResponseBody(WhosOn.Library.LogonAccountingServiceReference.LogonEvent FindLogonEventResult) {
             this.FindLogonEventResult = FindLogonEventResult;
         }
     }
@@ -383,12 +383,12 @@ namespace WhosOn.Library.LogonEventServiceReference {
     public partial class FindLogonEventsRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="FindLogonEvents", Namespace="http://it.bmc.uu.se/whoson", Order=0)]
-        public WhosOn.Library.LogonEventServiceReference.FindLogonEventsRequestBody Body;
+        public WhosOn.Library.LogonAccountingServiceReference.FindLogonEventsRequestBody Body;
         
         public FindLogonEventsRequest() {
         }
         
-        public FindLogonEventsRequest(WhosOn.Library.LogonEventServiceReference.FindLogonEventsRequestBody Body) {
+        public FindLogonEventsRequest(WhosOn.Library.LogonAccountingServiceReference.FindLogonEventsRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -399,15 +399,15 @@ namespace WhosOn.Library.LogonEventServiceReference {
     public partial class FindLogonEventsRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public WhosOn.Library.LogonEventServiceReference.LogonEvent filter;
+        public WhosOn.Library.LogonAccountingServiceReference.LogonEvent filter;
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public WhosOn.Library.LogonEventServiceReference.LogonEventMatch match;
+        public WhosOn.Library.LogonAccountingServiceReference.LogonEventMatch match;
         
         public FindLogonEventsRequestBody() {
         }
         
-        public FindLogonEventsRequestBody(WhosOn.Library.LogonEventServiceReference.LogonEvent filter, WhosOn.Library.LogonEventServiceReference.LogonEventMatch match) {
+        public FindLogonEventsRequestBody(WhosOn.Library.LogonAccountingServiceReference.LogonEvent filter, WhosOn.Library.LogonAccountingServiceReference.LogonEventMatch match) {
             this.filter = filter;
             this.match = match;
         }
@@ -419,12 +419,12 @@ namespace WhosOn.Library.LogonEventServiceReference {
     public partial class FindLogonEventsResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="FindLogonEventsResponse", Namespace="http://it.bmc.uu.se/whoson", Order=0)]
-        public WhosOn.Library.LogonEventServiceReference.FindLogonEventsResponseBody Body;
+        public WhosOn.Library.LogonAccountingServiceReference.FindLogonEventsResponseBody Body;
         
         public FindLogonEventsResponse() {
         }
         
-        public FindLogonEventsResponse(WhosOn.Library.LogonEventServiceReference.FindLogonEventsResponseBody Body) {
+        public FindLogonEventsResponse(WhosOn.Library.LogonAccountingServiceReference.FindLogonEventsResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -435,56 +435,56 @@ namespace WhosOn.Library.LogonEventServiceReference {
     public partial class FindLogonEventsResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public WhosOn.Library.LogonEventServiceReference.LogonEvent[] FindLogonEventsResult;
+        public System.Collections.Generic.List<WhosOn.Library.LogonAccountingServiceReference.LogonEvent> FindLogonEventsResult;
         
         public FindLogonEventsResponseBody() {
         }
         
-        public FindLogonEventsResponseBody(WhosOn.Library.LogonEventServiceReference.LogonEvent[] FindLogonEventsResult) {
+        public FindLogonEventsResponseBody(System.Collections.Generic.List<WhosOn.Library.LogonAccountingServiceReference.LogonEvent> FindLogonEventsResult) {
             this.FindLogonEventsResult = FindLogonEventsResult;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
-    public interface LogonEventServiceSoapChannel : WhosOn.Library.LogonEventServiceReference.LogonEventServiceSoap, System.ServiceModel.IClientChannel {
+    public interface LogonAccountingServiceSoapChannel : WhosOn.Library.LogonAccountingServiceReference.LogonAccountingServiceSoap, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
-    public partial class LogonEventServiceSoapClient : System.ServiceModel.ClientBase<WhosOn.Library.LogonEventServiceReference.LogonEventServiceSoap>, WhosOn.Library.LogonEventServiceReference.LogonEventServiceSoap {
+    public partial class LogonAccountingServiceSoapClient : System.ServiceModel.ClientBase<WhosOn.Library.LogonAccountingServiceReference.LogonAccountingServiceSoap>, WhosOn.Library.LogonAccountingServiceReference.LogonAccountingServiceSoap {
         
-        public LogonEventServiceSoapClient() {
+        public LogonAccountingServiceSoapClient() {
         }
         
-        public LogonEventServiceSoapClient(string endpointConfigurationName) : 
+        public LogonAccountingServiceSoapClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public LogonEventServiceSoapClient(string endpointConfigurationName, string remoteAddress) : 
+        public LogonAccountingServiceSoapClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public LogonEventServiceSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public LogonAccountingServiceSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public LogonEventServiceSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public LogonAccountingServiceSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WhosOn.Library.LogonEventServiceReference.CreateLogonEventResponse WhosOn.Library.LogonEventServiceReference.LogonEventServiceSoap.CreateLogonEvent(WhosOn.Library.LogonEventServiceReference.CreateLogonEventRequest request) {
+        WhosOn.Library.LogonAccountingServiceReference.CreateLogonEventResponse WhosOn.Library.LogonAccountingServiceReference.LogonAccountingServiceSoap.CreateLogonEvent(WhosOn.Library.LogonAccountingServiceReference.CreateLogonEventRequest request) {
             return base.Channel.CreateLogonEvent(request);
         }
         
         public int CreateLogonEvent(string user, string domain, string computer, string hwaddr) {
-            WhosOn.Library.LogonEventServiceReference.CreateLogonEventRequest inValue = new WhosOn.Library.LogonEventServiceReference.CreateLogonEventRequest();
-            inValue.Body = new WhosOn.Library.LogonEventServiceReference.CreateLogonEventRequestBody();
+            WhosOn.Library.LogonAccountingServiceReference.CreateLogonEventRequest inValue = new WhosOn.Library.LogonAccountingServiceReference.CreateLogonEventRequest();
+            inValue.Body = new WhosOn.Library.LogonAccountingServiceReference.CreateLogonEventRequestBody();
             inValue.Body.user = user;
             inValue.Body.domain = domain;
             inValue.Body.computer = computer;
             inValue.Body.hwaddr = hwaddr;
-            WhosOn.Library.LogonEventServiceReference.CreateLogonEventResponse retVal = ((WhosOn.Library.LogonEventServiceReference.LogonEventServiceSoap)(this)).CreateLogonEvent(inValue);
+            WhosOn.Library.LogonAccountingServiceReference.CreateLogonEventResponse retVal = ((WhosOn.Library.LogonAccountingServiceReference.LogonAccountingServiceSoap)(this)).CreateLogonEvent(inValue);
             return retVal.Body.CreateLogonEventResult;
         }
         
@@ -497,31 +497,31 @@ namespace WhosOn.Library.LogonEventServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WhosOn.Library.LogonEventServiceReference.FindLogonEventResponse WhosOn.Library.LogonEventServiceReference.LogonEventServiceSoap.FindLogonEvent(WhosOn.Library.LogonEventServiceReference.FindLogonEventRequest request) {
+        WhosOn.Library.LogonAccountingServiceReference.FindLogonEventResponse WhosOn.Library.LogonAccountingServiceReference.LogonAccountingServiceSoap.FindLogonEvent(WhosOn.Library.LogonAccountingServiceReference.FindLogonEventRequest request) {
             return base.Channel.FindLogonEvent(request);
         }
         
-        public WhosOn.Library.LogonEventServiceReference.LogonEvent FindLogonEvent(string user, string domain, string computer) {
-            WhosOn.Library.LogonEventServiceReference.FindLogonEventRequest inValue = new WhosOn.Library.LogonEventServiceReference.FindLogonEventRequest();
-            inValue.Body = new WhosOn.Library.LogonEventServiceReference.FindLogonEventRequestBody();
+        public WhosOn.Library.LogonAccountingServiceReference.LogonEvent FindLogonEvent(string user, string domain, string computer) {
+            WhosOn.Library.LogonAccountingServiceReference.FindLogonEventRequest inValue = new WhosOn.Library.LogonAccountingServiceReference.FindLogonEventRequest();
+            inValue.Body = new WhosOn.Library.LogonAccountingServiceReference.FindLogonEventRequestBody();
             inValue.Body.user = user;
             inValue.Body.domain = domain;
             inValue.Body.computer = computer;
-            WhosOn.Library.LogonEventServiceReference.FindLogonEventResponse retVal = ((WhosOn.Library.LogonEventServiceReference.LogonEventServiceSoap)(this)).FindLogonEvent(inValue);
+            WhosOn.Library.LogonAccountingServiceReference.FindLogonEventResponse retVal = ((WhosOn.Library.LogonAccountingServiceReference.LogonAccountingServiceSoap)(this)).FindLogonEvent(inValue);
             return retVal.Body.FindLogonEventResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WhosOn.Library.LogonEventServiceReference.FindLogonEventsResponse WhosOn.Library.LogonEventServiceReference.LogonEventServiceSoap.FindLogonEvents(WhosOn.Library.LogonEventServiceReference.FindLogonEventsRequest request) {
+        WhosOn.Library.LogonAccountingServiceReference.FindLogonEventsResponse WhosOn.Library.LogonAccountingServiceReference.LogonAccountingServiceSoap.FindLogonEvents(WhosOn.Library.LogonAccountingServiceReference.FindLogonEventsRequest request) {
             return base.Channel.FindLogonEvents(request);
         }
         
-        public WhosOn.Library.LogonEventServiceReference.LogonEvent[] FindLogonEvents(WhosOn.Library.LogonEventServiceReference.LogonEvent filter, WhosOn.Library.LogonEventServiceReference.LogonEventMatch match) {
-            WhosOn.Library.LogonEventServiceReference.FindLogonEventsRequest inValue = new WhosOn.Library.LogonEventServiceReference.FindLogonEventsRequest();
-            inValue.Body = new WhosOn.Library.LogonEventServiceReference.FindLogonEventsRequestBody();
+        public System.Collections.Generic.List<WhosOn.Library.LogonAccountingServiceReference.LogonEvent> FindLogonEvents(WhosOn.Library.LogonAccountingServiceReference.LogonEvent filter, WhosOn.Library.LogonAccountingServiceReference.LogonEventMatch match) {
+            WhosOn.Library.LogonAccountingServiceReference.FindLogonEventsRequest inValue = new WhosOn.Library.LogonAccountingServiceReference.FindLogonEventsRequest();
+            inValue.Body = new WhosOn.Library.LogonAccountingServiceReference.FindLogonEventsRequestBody();
             inValue.Body.filter = filter;
             inValue.Body.match = match;
-            WhosOn.Library.LogonEventServiceReference.FindLogonEventsResponse retVal = ((WhosOn.Library.LogonEventServiceReference.LogonEventServiceSoap)(this)).FindLogonEvents(inValue);
+            WhosOn.Library.LogonAccountingServiceReference.FindLogonEventsResponse retVal = ((WhosOn.Library.LogonAccountingServiceReference.LogonAccountingServiceSoap)(this)).FindLogonEvents(inValue);
             return retVal.Body.FindLogonEventsResult;
         }
     }

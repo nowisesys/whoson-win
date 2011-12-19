@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="NrVheGnaGsQrrAFEVd9CaeQEEp4=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="8Wpi5rEjCEaiteO3LZYL69Rhva4=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="basicHttpBinding" name="LogonEventServiceSoap">
+    <bindingConfiguration bindingType="basicHttpBinding" name="LogonAccountingServiceSoap">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>LogonEventServiceSoap</serializedValue>
+          <serializedValue>LogonAccountingServiceSoap</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>00:01:00</serializedValue>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="LogonEventServiceSoap" contract="LogonEventServiceReference.LogonEventServiceSoap" bindingType="basicHttpBinding" address="http://localhost/websvc/whoson/LogonEventService.asmx" bindingConfiguration="LogonEventServiceSoap">
+    <endpoint name="LogonAccountingServiceSoap" contract="LogonAccountingServiceReference.LogonAccountingServiceSoap" bindingType="basicHttpBinding" address="http://localhost/websvc/whoson2/LogonAccountingService.asmx" bindingConfiguration="LogonAccountingServiceSoap">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost/websvc/whoson/LogonEventService.asmx</serializedValue>
+          <serializedValue>http://localhost/websvc/whoson2/LogonAccountingService.asmx</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -124,10 +124,10 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>LogonEventServiceSoap</serializedValue>
+          <serializedValue>LogonAccountingServiceSoap</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>LogonEventServiceReference.LogonEventServiceSoap</serializedValue>
+          <serializedValue>LogonAccountingServiceReference.LogonAccountingServiceSoap</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -187,7 +187,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>LogonEventServiceSoap</serializedValue>
+          <serializedValue>LogonAccountingServiceSoap</serializedValue>
         </property>
       </properties>
     </endpoint>
