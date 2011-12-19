@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using WhosOn.Library.LogonEventServiceReference;
+using WhosOn.Library.LogonAccountingServiceReference;
 
 namespace WhosOn.Library
 {
@@ -68,7 +68,7 @@ namespace WhosOn.Library
                 HwAddress = network.HwAddress;
                 Workstation = network.Computer;
             }
-            using (LogonEventServiceSoapClient client = new LogonEventServiceSoapClient())
+            using (LogonAccountingServiceSoapClient client = new LogonAccountingServiceSoapClient())
             {
                 EventID = client.CreateLogonEvent(Username, Domain, Workstation, HwAddress);
             }
@@ -83,7 +83,7 @@ namespace WhosOn.Library
             {
                 throw new ArgumentException();
             }
-            using (LogonEventServiceSoapClient client = new LogonEventServiceSoapClient())
+            using (LogonAccountingServiceSoapClient client = new LogonAccountingServiceSoapClient())
             {
                 client.CloseLogonEvent(EventID);
             }
@@ -98,7 +98,7 @@ namespace WhosOn.Library
             {
                 throw new ArgumentException();
             }
-            using (LogonEventServiceSoapClient client = new LogonEventServiceSoapClient())
+            using (LogonAccountingServiceSoapClient client = new LogonAccountingServiceSoapClient())
             {
                 client.DeleteLogonEvent(EventID);
             }
@@ -108,7 +108,7 @@ namespace WhosOn.Library
         /// Find all logon events matching the properties of this object.
         /// </summary>
         /// <returns>Array of LogonEvent objects.</returns>
-        public LogonEvent[] Find()
+        public List<LogonEvent> Find()
         {
             return Find(this);
         }
@@ -118,7 +118,7 @@ namespace WhosOn.Library
         /// </summary>
         /// <param name="filter">The logon event filter.</param>
         /// <returns>Array of LogonEvent objects.</returns>
-        public static LogonEvent[] Find(LogonEvent filter)
+        public static List<LogonEvent> Find(LogonEvent filter)
         {
             return Find(filter, LogonEventMatch.Exact);
         }
@@ -129,9 +129,9 @@ namespace WhosOn.Library
         /// <param name="filter">The logon event filter.</param>
         /// <param name="match">The match preferences.</param>
         /// <returns>Array of LogonEvent objects.</returns>
-        public static LogonEvent[] Find(LogonEvent filter, LogonEventMatch match)
+        public static List<LogonEvent> Find(LogonEvent filter, LogonEventMatch match)
         {
-            using (LogonEventServiceSoapClient client = new LogonEventServiceSoapClient())
+            using (LogonAccountingServiceSoapClient client = new LogonAccountingServiceSoapClient())
             {
                 return client.FindLogonEvents(filter, match);
             }
@@ -146,7 +146,7 @@ namespace WhosOn.Library
         /// <returns>An LogonEventProxy object.</returns>
         public static LogonEventProxy Find(string username, string domain, string computer)
         {
-            using (LogonEventServiceSoapClient client = new LogonEventServiceSoapClient())
+            using (LogonAccountingServiceSoapClient client = new LogonAccountingServiceSoapClient())
             {
                 LogonEvent source = client.FindLogonEvent(username, domain, computer);
                 return LogonEventConverter.Convert(source);

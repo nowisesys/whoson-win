@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 using WhosOn.Library;
-using WhosOn.Library.LogonEventServiceReference;
+using WhosOn.Library.LogonAccountingServiceReference;
 
 namespace WhosOn.Client
 {

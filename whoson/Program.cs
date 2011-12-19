@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -8,7 +7,7 @@ using System.Data;
 using System.ServiceModel;
 
 using WhosOn.Library;
-using WhosOn.Library.LogonEventServiceReference;
+using WhosOn.Library.LogonAccountingServiceReference;
 using WhosOn.Client;
 
 namespace WhosOn.Client
@@ -88,7 +87,7 @@ namespace WhosOn.Client
 
         void List()
         {
-            LogonEvent[] events = LogonEventProxy.Find(options.Filter, options.Match);
+            List<LogonEvent> events = LogonEventProxy.Find(options.Filter, options.Match);
             ProgramOutput output = new ProgramOutput();
 
             switch (options.GetFormat())

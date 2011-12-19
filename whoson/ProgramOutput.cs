@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
-using WhosOn.Library.LogonEventServiceReference;
+using WhosOn.Library.LogonAccountingServiceReference;
 
 namespace WhosOn.Client
 {
     public interface IOutputFormat
     {
         void WriteHeader();
-        void WriteFooter(LogonEvent[] records);
+        void WriteFooter(List<LogonEvent> records);
         void WriteRecord(LogonEvent record);
     }
 
@@ -23,10 +22,10 @@ namespace WhosOn.Client
             // ignore
         }
 
-        public void WriteFooter(LogonEvent[] records)
+        public void WriteFooter(List<LogonEvent> records)
         {
             Console.WriteLine(Separator);
-            Console.WriteLine("Summary: {0} records in output", records.Length);
+            Console.WriteLine("Summary: {0} records in output", records.Count);
         }
 
         public void WriteRecord(LogonEvent record)
@@ -54,7 +53,7 @@ namespace WhosOn.Client
             Console.WriteLine("Event ID:\tUsername:\tDomain:\tMAC:\tIP-address\tHostname:\tWorkstation (NetBIOS):\tStart:\tEnd:");
         }
         
-        public void WriteFooter(LogonEvent[] records)
+        public void WriteFooter(List<LogonEvent> records)
         {
             // ignore
         }
@@ -82,7 +81,7 @@ namespace WhosOn.Client
             Console.WriteLine("EventID: Username: Domain: MAC: IP-address Hostname: Workstation: Start: End:");
         }
 
-        public void WriteFooter(LogonEvent[] records)
+        public void WriteFooter(List<LogonEvent> records)
         {
             // ignore
         }
@@ -111,7 +110,7 @@ namespace WhosOn.Client
             Console.WriteLine("<LogonEvents>");
         }
 
-        public void WriteFooter(LogonEvent[] records)
+        public void WriteFooter(List<LogonEvent> records)
         {
             Console.WriteLine("</LogonEvents>");
         }
@@ -144,9 +143,9 @@ namespace WhosOn.Client
             this.format = format;
         }
 
-        public void Write(LogonEvent[] records)
+        public void Write(List<LogonEvent> records)
         {
-            if (records.Length > 0)
+            if (records.Count > 0)
             {
                 format.WriteHeader();
                 foreach (LogonEvent record in records)
