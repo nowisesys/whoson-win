@@ -24,6 +24,12 @@ namespace WhosOn.Library
                     break;
                 }
             }
+
+            if (this.iface == null)
+            {
+                throw new NetworkInformationException();    // No usable interface
+            }
+
         }
 
         public string Computer
@@ -33,7 +39,13 @@ namespace WhosOn.Library
 
         public string HwAddress
         {
-            get { return iface.GetPhysicalAddress().ToString(); }
+            get { 
+                String h = iface.GetPhysicalAddress().ToString();
+                return "" + 
+                    h[0] + h[1] + ":" + h[2] + h[3] + ":" +
+                    h[4] + h[5] + ":" + h[6] + h[7] + ":" +
+                    h[8] + h[9] + ":" + h[10] + h[11];
+            }
         }
     }
 }
