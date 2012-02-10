@@ -57,7 +57,7 @@ namespace WhosOn.Client
     {
         public enum Reason
         {
-            Logout, Login, List, Unknown
+            Logout, Login, List, Close, Unknown
         }
 
         public enum Format
@@ -102,6 +102,7 @@ namespace WhosOn.Client
             Console.WriteLine("  -i,--logon:       Store logon event.");
             Console.WriteLine("  -o,--logout:      Store logoff event.");
             Console.WriteLine("  -l,--list:        List logon events (see filter and matching)");
+            Console.WriteLine("  -F,--close:       Close matching sessions.");
             Console.WriteLine("  -v,--verbose:     Be more verbose.");
             Console.WriteLine("  -h,--help:        Show this help");
             Console.WriteLine("  -V,--version:     Get version info.");
@@ -188,6 +189,10 @@ namespace WhosOn.Client
                     case "-l":
                     case "--list":
                         reason = Reason.List;
+                        break;
+                    case "-F":
+                    case "--close":
+                        reason = Reason.Close;
                         break;
 
                         // 
@@ -341,7 +346,7 @@ namespace WhosOn.Client
 
             if (reason == Reason.Unknown)
             {
-                throw new ArgumentException("Missing -i or -o option, see --help");
+                throw new ArgumentException("Missing -l, -i or -o option, see --help");
             }
         }
 

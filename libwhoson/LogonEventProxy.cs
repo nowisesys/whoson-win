@@ -60,7 +60,8 @@ namespace WhosOn.Library
         /// <summary>
         /// Add logon event and set the EventID.
         /// </summary>
-        public void Add()
+        /// <param name="adapter">The SOAP proxy adapter</param>
+        public void Add(LogonEventAdapter adapter)
         {
             if (HwAddress == null)
             {
@@ -68,102 +69,100 @@ namespace WhosOn.Library
                 HwAddress = network.HwAddress;
                 Workstation = network.Computer;
             }
-            using (LogonAccountingServiceSoapClient client = new LogonAccountingServiceSoapClient())
-            {
-                EventID = client.CreateLogonEvent(Username, Domain, Workstation, HwAddress);
-            }
+            EventID = adapter.Add(this);
         }
 
         /// <summary>
         /// Close logon event represent by this object.
         /// </summary>
-        public void Close()
+        /// <param name="adapter">The SOAP proxy adapter</param>
+        public void Close(LogonEventAdapter adapter)
         {
             if (EventID == 0)
             {
                 throw new ArgumentException();
             }
-            using (LogonAccountingServiceSoapClient client = new LogonAccountingServiceSoapClient())
-            {
-                client.CloseLogonEvent(EventID);
-            }
+            adapter.Close(this);
         }
 
         /// <summary>
         /// Delete the logon event represent by this object.
         /// </summary>
-        public void Delete()
+        /// <param name="adapter">The SOAP proxy adapter</param>
+        public void Delete(LogonEventAdapter adapter)
         {
             if (EventID == 0)
             {
                 throw new ArgumentException();
             }
-            using (LogonAccountingServiceSoapClient client = new LogonAccountingServiceSoapClient())
-            {
-                client.DeleteLogonEvent(EventID);
-            }
+            adapter.Delete(this);
         }
 
         /// <summary>
         /// Find all logon events matching the properties of this object.
         /// </summary>
-        /// <returns>Array of LogonEvent objects.</returns>
-        public List<LogonEvent> Find()
-        {
-            return Find(this);
-        }
-
-        /// <summary>
-        /// Find all logon events matching the given filter.
-        /// </summary>
-        /// <param name="filter">The logon event filter.</param>
-        /// <returns>Array of LogonEvent objects.</returns>
-        public static List<LogonEvent> Find(LogonEvent filter)
-        {
-            return Find(filter, LogonEventMatch.Exact);
-        }
-
-        /// <summary>
-        /// Find all logon events matching the given filter and match preferences.
-        /// </summary>
-        /// <param name="filter">The logon event filter.</param>
+        /// <param name="adapter">The SOAP proxy adapter</param>
         /// <param name="match">The match preferences.</param>
         /// <returns>Array of LogonEvent objects.</returns>
-        public static List<LogonEvent> Find(LogonEvent filter, LogonEventMatch match)
+        public List<LogonEvent> Find(LogonEventAdapter adapter, LogonEventMatch match)
         {
-            using (LogonAccountingServiceSoapClient client = new LogonAccountingServiceSoapClient())
-            {
-                return client.FindLogonEvents(filter, match);
-            }
+            return adapter.Find(this, match);
         }
 
-        /// <summary>
-        /// Find the logon event proxy matching supplied username, domain and computer name (the NetBIOS name).
-        /// </summary>
-        /// <param name="username">The username.</param>
-        /// <param name="domain">The logon domain.</param>
-        /// <param name="computer">The computer name.</param>
-        /// <returns>An LogonEventProxy object.</returns>
-        public static LogonEventProxy Find(string username, string domain, string computer)
-        {
-            using (LogonAccountingServiceSoapClient client = new LogonAccountingServiceSoapClient())
-            {
-                LogonEvent source = client.FindLogonEvent(username, domain, computer);
-                return LogonEventConverter.Convert(source);
-            }
-        }
+        ///// <summary>
+        ///// Find all logon events matching the given filter.
+        ///// </summary>
+        ///// <param name="adapter">The SOAP proxy adapter</param>
+        ///// <param name="filter">The logon event filter.</param>
+        ///// <returns>Array of LogonEvent objects.</returns>
+        //public static List<LogonEvent> Find(LogonEvent filter)
+        //{
+        //    return Find(filter, LogonEventMatch.Exact);
+        //}
 
-        /// <summary>
-        /// Find the logon event proxy matching the supplied account. The current computer name
-        /// is implicit user as the logon computer in the lookup.
-        /// </summary>
-        /// <param name="account">The account object.</param>
-        /// <returns>An LogonEventProxy object.</returns>
-        public static LogonEventProxy Find(Account account)
-        {
-            Network network = new Network();
-            return Find(account.UserName, account.Domain, network.Computer);
-        }
+        ///// <summary>
+        ///// Find all logon events matching the given filter and match preferences.
+        ///// </summary>
+        ///// <param name="adapter">The SOAP proxy adapter</param>
+        ///// <param name="filter">The logon event filter.</param>
+        ///// <param name="match">The match preferences.</param>
+        ///// <returns>Array of LogonEvent objects.</returns>
+        //public static List<LogonEvent> Find(LogonEvent filter, LogonEventMatch match)
+        //{
+        //    using (LogonAccountingServiceSoapClient client = new LogonAccountingServiceSoapClient())
+        //    {
+        //        return client.FindLogonEvents(filter, match);
+        //    }
+        //}
+
+        ///// <summary>
+        ///// Find the logon event proxy matching supplied username, domain and computer name (the NetBIOS name).
+        ///// </summary>
+        ///// <param name="adapter">The SOAP proxy adapter</param>
+        ///// <param name="username">The username.</param>
+        ///// <param name="domain">The logon domain.</param>
+        ///// <param name="computer">The computer name.</param>
+        ///// <returns>An LogonEventProxy object.</returns>
+        //public static LogonEventProxy Find(string username, string domain, string computer)
+        //{
+        //    using (LogonAccountingServiceSoapClient client = new LogonAccountingServiceSoapClient())
+        //    {
+        //        LogonEvent source = client.FindLogonEvent(username, domain, computer);
+        //        return LogonEventConverter.Convert(source);
+        //    }
+        //}
+
+        ///// <summary>
+        ///// Find the logon event proxy matching the supplied account. The current computer name
+        ///// is implicit user as the logon computer in the lookup.
+        ///// </summary>
+        ///// <param name="account">The account object.</param>
+        ///// <returns>An LogonEventProxy object.</returns>
+        //public static LogonEventProxy Find(Account account)
+        //{
+        //    Network network = new Network();
+        //    return Find(account.UserName, account.Domain, network.Computer);
+        //}
 
     }
 }

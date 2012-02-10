@@ -73,6 +73,9 @@ namespace WhosOn.Client
                     case ProgramOptions.Reason.List:
                         List();
                         break;
+                    case ProgramOptions.Reason.Close:
+                        Close();
+                        break;
                 }
             }
             catch (Win32Exception exception)
@@ -85,9 +88,27 @@ namespace WhosOn.Client
             }
         }
 
+        /// <summary>
+        /// Close all records matching the filter options.
+        /// </summary>
+        void Close()
+        {
+            LogonEventAdapter adapter = new LogonEventAdapter();
+            List<LogonEvent> events = adapter.Find(options.Filter, options.Match);
+
+            foreach (LogonEvent record in events)
+            {
+                adapter.Close(record);
+            }
+        }
+
+        /// <summary>
+        /// List all records matching the filter options.
+        /// </summary>
         void List()
         {
-            List<LogonEvent> events = LogonEventProxy.Find(options.Filter, options.Match);
+            LogonEventAdapter adapter = new LogonEventAdapter();
+            List<LogonEvent> events = adapter.Find(options.Filter, options.Match);
             ProgramOutput output = new ProgramOutput();
 
             switch (options.GetFormat())
@@ -111,6 +132,9 @@ namespace WhosOn.Client
             }
         }
 
+        /// <summary>
+        /// Records an login event.
+        /// </summary>
         void Login()
         {
             Account account = new Account();
@@ -122,9 +146,15 @@ namespace WhosOn.Client
                 528);
 
             LogonEventProxy proxy = new LogonEventProxy(account);
-            proxy.Add();
+            LogonEventAdapter adapter = new LogonEventAdapter();
+            proxy.Add(adapter);
         }
 
+        /// <summary>
+        /// Records an logout event. The event ID is remotelly queried using the logged on
+        /// user and domain as search preferences. The current workstation is detected
+        /// automatic.
+        /// </summary>
         void Logout()
         {
             Account account = new Account();
@@ -135,8 +165,9 @@ namespace WhosOn.Client
                 EventLogEntryType.Information,
                 528);
 
-            LogonEventProxy proxy = LogonEventProxy.Find(account);
-            proxy.Close();
+            LogonEventAdapter adapter = new LogonEventAdapter();
+            LogonEvent record = adapter.Find(account);
+            adapter.Close(record.EventID);
         }
 
         static void Main(string[] args)
