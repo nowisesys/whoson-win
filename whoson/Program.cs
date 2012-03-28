@@ -20,17 +20,6 @@ namespace WhosOn.Client
     {
         private ProgramOptions options = new ProgramOptions();
 
-        /// <summary>
-        /// Constructor.
-        /// </summary>
-        public Program()
-        {
-            if (!EventLog.SourceExists(ProgramInfo.Product))
-            {
-                EventLog.CreateEventSource(ProgramInfo.Product, "Application");
-            }
-        }
-
         void Report(Exception exception)
         {
             if (options.Verbose)
@@ -76,6 +65,12 @@ namespace WhosOn.Client
                     case ProgramOptions.Reason.Close:
                         Close();
                         break;
+                    case ProgramOptions.Reason.Register:
+                        Register();
+                        break;
+                    case ProgramOptions.Reason.Uninstall:
+                        Uninstall();
+                        break;
                 }
             }
             catch (Win32Exception exception)
@@ -85,6 +80,30 @@ namespace WhosOn.Client
             catch (Exception exception)
             {
                 Report(exception);
+            }
+        }
+
+        private void Uninstall()
+        {
+            if (EventLog.SourceExists(ProgramInfo.Product))
+            {
+                EventLog.DeleteEventSource(ProgramInfo.Product);
+                if (options.Verbose)
+                {
+                    Console.WriteLine("Removed eventlog source");
+                }
+            }
+        }
+
+        private void Register()
+        {
+            if (!EventLog.SourceExists(ProgramInfo.Product))
+            {
+                EventLog.CreateEventSource(ProgramInfo.Product, "Application");
+                if (options.Verbose)
+                {
+                    Console.WriteLine("Registered eventlog source");
+                }
             }
         }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Diagnostics;
 
 using WhosOn.Library;
 using WhosOn.Library.LogonAccountingServiceReference;
@@ -57,7 +58,7 @@ namespace WhosOn.Client
     {
         public enum Reason
         {
-            Logout, Login, List, Close, Unknown
+            Logout, Login, List, Close, Register, Uninstall, Unknown
         }
 
         public enum Format
@@ -128,6 +129,9 @@ namespace WhosOn.Client
             Console.WriteLine("  -C,--compact:     Output formatted in compact style.");
             Console.WriteLine("  -T,--tabbed:      Output in tab separated format.");
             Console.WriteLine("  -X,--XML:         Output formatted as XML.");
+            Console.WriteLine("Miscellanous:");
+            Console.WriteLine("  -r,--register:    Register eventlog source.");
+            Console.WriteLine("  -u,--uninstall:   Remove eventlog source.");
             Console.WriteLine();
             Console.WriteLine("The --between, --before and --after can only be used with the --start, --end (and --id) filter.");
             Console.WriteLine();
@@ -175,9 +179,9 @@ namespace WhosOn.Client
                         Environment.Exit(0);
                         break;
 
-                        // 
-                        // Application reason:
-                        // 
+                    // 
+                    // Application reason:
+                    // 
                     case "-i":
                     case "--logon":
                         reason = Reason.Login;
@@ -195,9 +199,9 @@ namespace WhosOn.Client
                         reason = Reason.Close;
                         break;
 
-                        // 
-                        // Filter options:
-                        // 
+                    // 
+                    // Filter options:
+                    // 
                     case "--id":
                         if (option.HasValue)
                         {
@@ -293,9 +297,9 @@ namespace WhosOn.Client
                         }
                         break;
 
-                        // 
-                        // Match options:
-                        // 
+                    // 
+                    // Match options:
+                    // 
                     case "-a":
                     case "--active":
                         match = LogonEventMatch.Active;
@@ -318,9 +322,9 @@ namespace WhosOn.Client
                         match = LogonEventMatch.Exact;
                         break;
 
-                        // 
-                        // Formatting:
-                        // 
+                    // 
+                    // Formatting:
+                    // 
                     case "-T":
                     case "--tabbed":
                         format = Format.Tabbed;
@@ -337,6 +341,18 @@ namespace WhosOn.Client
                     case "--XML":
                     case "--xml":
                         format = Format.XML;
+                        break;
+
+                    // 
+                    // Miscellanous:
+                    // 
+                    case "-r":
+                    case "--register":
+                        reason = Reason.Register;
+                        break;
+                    case "-u":
+                    case "--uninstall":
+                        reason = Reason.Uninstall;
                         break;
 
                     default:
