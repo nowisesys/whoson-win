@@ -1,0 +1,10 @@
+The application can be installed in unattended mode, bypassing the license agreement 
+and using default options.
+
+  msiexec /quiet /i setup.exe          # background
+  msiexec /passive /qb /i setup.exe    # visible
+
+In either mode, the DOS-window will popup when the whoson application is runned with
+the -r option to register the eventlog source.
+
+// Anders Lövgren, 2012-03-28
