@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_7D288C2F2754CBF27B4C522AEAFA58AD"
+        "MsmKey" = "8:_650C579F2205457C9587AD5DA71C70DE"
         "OwnerKey" = "8:_CED66D656BE64ED8834EA3FD7643D2F1"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -33,6 +33,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_DD02FDFC851A4FC6946F97B885AFBFCE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_CED66D656BE64ED8834EA3FD7643D2F1"
         "MsmSig" = "8:_UNDEFINED"
@@ -40,7 +46,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_7D288C2F2754CBF27B4C522AEAFA58AD"
+        "OwnerKey" = "8:_650C579F2205457C9587AD5DA71C70DE"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -61,6 +67,27 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Net.Framework.3.5.SP1"
+                    {
+                    "Name" = "8:.NET Framework 3.5 SP1"
+                    "ProductCode" = "8:Microsoft.Net.Framework.3.5.SP1"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -77,12 +104,61 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Net.Framework.3.5.SP1"
+                    {
+                    "Name" = "8:.NET Framework 3.5 SP1"
+                    "ProductCode" = "8:Microsoft.Net.Framework.3.5.SP1"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
+            }
         }
     }
     "Deployable"
     {
         "CustomAction"
         {
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_6F11D7A788FB41089ED26CAA4058E9AA"
+            {
+            "Name" = "8:Primary output from whoson (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_CED66D656BE64ED8834EA3FD7643D2F1"
+            "FileType" = "3:2"
+            "InstallAction" = "3:1"
+            "Arguments" = "8:-r"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_D24124C8_AA80_40B6_BE02_3560F66C19AC"
+            "InstallerClass" = "11:FALSE"
+            "CustomActionData" = "8:"
+            }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_EE147C4F0F12451FA3409ED730D90754"
+            {
+            "Name" = "8:Primary output from whoson (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_CED66D656BE64ED8834EA3FD7643D2F1"
+            "FileType" = "3:2"
+            "InstallAction" = "3:3"
+            "Arguments" = "8:-u"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_920B9FF4_4E06_454E_A9E5_B99A1E683A67"
+            "InstallerClass" = "11:FALSE"
+            "CustomActionData" = "8:"
+            }
         }
         "DefaultFeature"
         {
@@ -106,14 +182,14 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7D288C2F2754CBF27B4C522AEAFA58AD"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_650C579F2205457C9587AD5DA71C70DE"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:libwhoson, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:libwhoson, Version=1.0.4470.19850, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_7D288C2F2754CBF27B4C522AEAFA58AD"
+                    "_650C579F2205457C9587AD5DA71C70DE"
                     {
                     "Name" = "8:libwhoson.dll"
                     "Attributes" = "3:512"
@@ -141,6 +217,26 @@
             {
             "SourcePath" = "8:..\\README.txt"
             "TargetName" = "8:README.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_11A274B401044337B196D4A25EB17997"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DD02FDFC851A4FC6946F97B885AFBFCE"
+            {
+            "SourcePath" = "8:..\\COPYING.rtf"
+            "TargetName" = "8:COPYING.rtf"
             "Tag" = "8:"
             "Folder" = "8:_11A274B401044337B196D4A25EB17997"
             "Condition" = "8:"
@@ -212,15 +308,15 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:WhosOn"
-        "ProductCode" = "8:{F1560178-8093-460F-A2F2-33330D001647}"
-        "PackageCode" = "8:{2F294462-46D7-47D4-B2D6-5E92CC57E9FB}"
+        "ProductName" = "8:WhosOn Client Side Application"
+        "ProductCode" = "8:{1B872EB4-218E-4AF9-B945-FB85B18202D0}"
+        "PackageCode" = "8:{E0C107B3-CA4B-4138-AB90-B8F94F8FD136}"
         "UpgradeCode" = "8:{DE2D5476-AE73-4723-AC1E-6E2C6D5F1847}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.1.0"
         "Manufacturer" = "8:Uppsala University\\BMC CompDept"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -247,7 +343,7 @@
                 {
                     "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_33D5DAF241424C3482AB6BCD1EF1F7CE"
                     {
-                    "Name" = "8:Software"
+                    "Name" = "8:SOFTWARE"
                     "Condition" = "8:"
                     "AlwaysCreate" = "11:FALSE"
                     "DeleteAtUninstall" = "11:FALSE"
@@ -281,7 +377,7 @@
                 {
                     "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_D83C7EA3558E428987078A9EB1E390A7"
                     {
-                    "Name" = "8:Software"
+                    "Name" = "8:SOFTWARE"
                     "Condition" = "8:"
                     "AlwaysCreate" = "11:FALSE"
                     "DeleteAtUninstall" = "11:FALSE"
@@ -378,6 +474,53 @@
                             }
                         }
                     }
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_203CBD8F95D74639A7F3F36F56FA7F01"
+                    {
+                    "Sequence" = "3:110"
+                    "DisplayName" = "8:License Agreement"
+                    "UseDynamicProperties" = "11:TRUE"
+                    "IsDependency" = "11:FALSE"
+                    "SourcePath" = "8:<VsdDialogDir>\\VsdLicenseDlg.wid"
+                        "Properties"
+                        {
+                            "BannerBitmap"
+                            {
+                            "Name" = "8:BannerBitmap"
+                            "DisplayName" = "8:#1001"
+                            "Description" = "8:#1101"
+                            "Type" = "3:8"
+                            "ContextData" = "8:Bitmap"
+                            "Attributes" = "3:4"
+                            "Setting" = "3:1"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                            "EulaText"
+                            {
+                            "Name" = "8:EulaText"
+                            "DisplayName" = "8:#1008"
+                            "Description" = "8:#1108"
+                            "Type" = "3:6"
+                            "ContextData" = "8:"
+                            "Attributes" = "3:0"
+                            "Setting" = "3:2"
+                            "Value" = "8:_DD02FDFC851A4FC6946F97B885AFBFCE"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                            "Sunken"
+                            {
+                            "Name" = "8:Sunken"
+                            "DisplayName" = "8:#1007"
+                            "Description" = "8:#1107"
+                            "Type" = "3:5"
+                            "ContextData" = "8:4;True=4;False=0"
+                            "Attributes" = "3:0"
+                            "Setting" = "3:0"
+                            "Value" = "3:4"
+                            "DefaultValue" = "3:4"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                        }
+                    }
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_6CF2A45E86244B82958CD4C5576DF1AD"
                     {
                     "Sequence" = "3:100"
@@ -406,8 +549,8 @@
                             "Type" = "3:3"
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
-                            "Setting" = "3:1"
-                            "Value" = "8:#1202"
+                            "Setting" = "3:2"
+                            "Value" = "8:This application is released under the GNU General Public License (GPL) version 3."
                             "DefaultValue" = "8:#1202"
                             "UsePlugInResources" = "11:TRUE"
                             }
@@ -419,8 +562,8 @@
                             "Type" = "3:3"
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
-                            "Setting" = "3:1"
-                            "Value" = "8:#1203"
+                            "Setting" = "3:2"
+                            "Value" = "8:The installer will guide you through the steps required to install [ProductName] [Version] on your computer."
                             "DefaultValue" = "8:#1203"
                             "UsePlugInResources" = "11:TRUE"
                             }
@@ -585,8 +728,8 @@
                             "Type" = "3:3"
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
-                            "Setting" = "3:1"
-                            "Value" = "8:#1202"
+                            "Setting" = "3:2"
+                            "Value" = "8:This application is released under the GNU General Public License (GPL) version 3."
                             "DefaultValue" = "8:#1202"
                             "UsePlugInResources" = "11:TRUE"
                             }
@@ -598,8 +741,8 @@
                             "Type" = "3:3"
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
-                            "Setting" = "3:1"
-                            "Value" = "8:#1203"
+                            "Setting" = "3:2"
+                            "Value" = "8:The installer will guide you through the steps required to install [ProductName] [Version] on your computer."
                             "DefaultValue" = "8:#1203"
                             "UsePlugInResources" = "11:TRUE"
                             }
@@ -734,7 +877,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_CED66D656BE64ED8834EA3FD7643D2F1"
             {
-            "SourcePath" = "8:..\\whoson\\obj\\Debug\\whoson.exe"
+            "SourcePath" = "8:..\\whoson\\obj\\Release\\whoson.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_11A274B401044337B196D4A25EB17997"
