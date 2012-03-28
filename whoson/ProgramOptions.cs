@@ -140,6 +140,7 @@ namespace WhosOn.Client
             Console.WriteLine("     --before:      Match logons before.");
             Console.WriteLine("     --after:       Match logons after.");
             Console.WriteLine("  -e,--exact:       Match filter exact.");
+            Console.WriteLine("  -t,--this:        This host is implied.");
             Console.WriteLine("Format:");
             Console.WriteLine("  -H,--human:       Output formatted for human reading.");
             Console.WriteLine("  -C,--compact:     Output formatted in compact style.");
@@ -338,6 +339,14 @@ namespace WhosOn.Client
                     case "-e":
                     case "--exact":
                         match = LogonEventMatch.Exact;
+                        break;
+                    case "-t":
+                    case "--this":
+                        {
+                            Network network = new Network();
+                            filter.HwAddress = network.HwAddress;
+                            filter.Workstation = network.Computer;
+                        }
                         break;
 
                     // 
