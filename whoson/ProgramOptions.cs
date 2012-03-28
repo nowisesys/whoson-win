@@ -149,7 +149,9 @@ namespace WhosOn.Client
             Console.WriteLine("  -r,--register:    Register eventlog source.");
             Console.WriteLine("  -u,--uninstall:   Remove eventlog source.");
             Console.WriteLine();
-            Console.WriteLine("The --between, --before and --after can only be used with the --start, --end (and --id) filter.");
+            Console.WriteLine("Notes:");
+            Console.WriteLine("1. The --between, --before and --after can only be used with the --start, --end (and --id) filter.");
+            Console.WriteLine("2. The --active and --closed option can only be used with exact matching filter options, like --host=xxx");
             Console.WriteLine();
             Console.WriteLine(ProgramInfo.Copyright);
         }
