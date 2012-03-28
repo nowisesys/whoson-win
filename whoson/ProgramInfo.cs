@@ -85,7 +85,7 @@ namespace WhosOn.Client
             get
             {
                 Assembly assembly = Assembly.GetExecutingAssembly();
-                AssemblyVersionAttribute attr = (AssemblyVersionAttribute)assembly.GetCustomAttributes(typeof(AssemblyVersionAttribute), true)[0];
+                AssemblyFileVersionAttribute attr = (AssemblyFileVersionAttribute)assembly.GetCustomAttributes(typeof(AssemblyFileVersionAttribute), true)[0];
                 return attr.Version;
             }
         }
