@@ -133,6 +133,9 @@ namespace WhosOn.Client
             Console.WriteLine("     --hw=addr:     Filter on MAC address.");
             Console.WriteLine("     --user=name:   Filter on username.");
             Console.WriteLine("     --domain=name: Filter on domain name.");
+            Console.WriteLine("     --first=num:   Filter on event ID.");
+            Console.WriteLine("     --last=num:    Filter on event ID.");
+            Console.WriteLine("  -L,--limit=num:   Limit number of rows returned.");
             Console.WriteLine("Matching:");
             Console.WriteLine("  -a,--active:      Match active logons.");
             Console.WriteLine("  -c,--closed:      Match closed logons.");
@@ -151,7 +154,7 @@ namespace WhosOn.Client
             Console.WriteLine("  -u,--uninstall:   Remove eventlog source.");
             Console.WriteLine();
             Console.WriteLine("Notes:");
-            Console.WriteLine("1. The --between, --before and --after can only be used with the --start, --end (and --id) filter.");
+            Console.WriteLine("1. The --between, --before and --after is limited to datetime (--start/--end) and ID (--first/--last) filtering.");
             Console.WriteLine("2. The --active and --closed option can only be used with exact matching filter options, like --host=xxx");
             Console.WriteLine();
             Console.WriteLine(ProgramInfo.Copyright);
@@ -315,6 +318,37 @@ namespace WhosOn.Client
                             filter.Domain = args[++i];
                         }
                         break;
+                    case "--first":
+                        if (option.HasValue)
+                        {
+                            filter.FirstID = int.Parse(option.Value);
+                        }
+                        else
+                        {
+                            filter.FirstID = int.Parse(args[++i]);
+                        }
+                        break;
+                    case "--last":
+                        if (option.HasValue)
+                        {
+                            filter.LastID = int.Parse(option.Value);
+                        }
+                        else
+                        {
+                            filter.LastID = int.Parse(args[++i]);
+                        }
+                        break;
+                    case "-L":
+                    case "--limit":
+                        if (option.HasValue)
+                        {
+                            filter.Limit = int.Parse(option.Value);
+                        }
+                        else
+                        {
+                            filter.Limit = int.Parse(args[++i]);
+                        }
+                        break;
 
                     // 
                     // Match options:
@@ -390,6 +424,21 @@ namespace WhosOn.Client
             if (reason == Reason.Unknown)
             {
                 throw new ArgumentException("Missing -l, -i or -o option, see --help");
+            }
+            if (filter.LastID != 0)
+            {
+                if (match != LogonEventMatch.Between)
+                {
+                    match = LogonEventMatch.Between;
+                }
+                if (filter.EventID != 0)
+                {
+                    filter.FirstID = filter.EventID;    // Make ID an alias for FirstID
+                }
+            }
+            if (filter.FirstID != 0 && filter.EventID == 0)
+            {
+                filter.EventID = filter.FirstID;        // Make FirstID an alias for ID
             }
         }
 
