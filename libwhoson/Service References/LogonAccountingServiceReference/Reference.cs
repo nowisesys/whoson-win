@@ -46,6 +46,12 @@ namespace WhosOn.Library.LogonAccountingServiceReference {
         
         private System.DateTime EndTimeField;
         
+        private int FirstIDField;
+        
+        private int LastIDField;
+        
+        private int LimitField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -169,6 +175,45 @@ namespace WhosOn.Library.LogonAccountingServiceReference {
                 if ((this.EndTimeField.Equals(value) != true)) {
                     this.EndTimeField = value;
                     this.RaisePropertyChanged("EndTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        public int FirstID {
+            get {
+                return this.FirstIDField;
+            }
+            set {
+                if ((this.FirstIDField.Equals(value) != true)) {
+                    this.FirstIDField = value;
+                    this.RaisePropertyChanged("FirstID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        public int LastID {
+            get {
+                return this.LastIDField;
+            }
+            set {
+                if ((this.LastIDField.Equals(value) != true)) {
+                    this.LastIDField = value;
+                    this.RaisePropertyChanged("LastID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        public int Limit {
+            get {
+                return this.LimitField;
+            }
+            set {
+                if ((this.LimitField.Equals(value) != true)) {
+                    this.LimitField = value;
+                    this.RaisePropertyChanged("Limit");
                 }
             }
         }

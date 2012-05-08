@@ -19,10 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost/websvc/whoson2/LogonAccountingService.asmx?WSDL" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost/websvc/whoson/LogonAccountingService.asmx?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="LogonAccountingService.wsdl" MetadataType="Wsdl" ID="0eca76cd-8ad3-4c08-ba42-f0d73a42cb54" SourceId="1" SourceUrl="http://localhost/websvc/whoson2/LogonAccountingService.asmx?WSDL" />
+    <MetadataFile FileName="LogonAccountingService.wsdl" MetadataType="Wsdl" ID="e1235418-c308-4861-b98e-fefe6ee9eed3" SourceId="1" SourceUrl="http://localhost/websvc/whoson/LogonAccountingService.asmx?WSDL" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

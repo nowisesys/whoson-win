@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="8Wpi5rEjCEaiteO3LZYL69Rhva4=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="NQebZPBQmMuF4VzRVXLYg6UIZdk=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="LogonAccountingServiceSoap">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="LogonAccountingServiceSoap" contract="LogonAccountingServiceReference.LogonAccountingServiceSoap" bindingType="basicHttpBinding" address="http://localhost/websvc/whoson2/LogonAccountingService.asmx" bindingConfiguration="LogonAccountingServiceSoap">
+    <endpoint name="LogonAccountingServiceSoap" contract="LogonAccountingServiceReference.LogonAccountingServiceSoap" bindingType="basicHttpBinding" address="http://localhost/websvc/whoson/LogonAccountingService.asmx" bindingConfiguration="LogonAccountingServiceSoap">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost/websvc/whoson2/LogonAccountingService.asmx</serializedValue>
+          <serializedValue>http://localhost/websvc/whoson/LogonAccountingService.asmx</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
