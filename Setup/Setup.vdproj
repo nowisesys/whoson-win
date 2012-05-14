@@ -186,7 +186,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:libwhoson, Version=1.2.4511.42373, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:libwhoson, Version=1.2.4517.25998, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_650C579F2205457C9587AD5DA71C70DE"
@@ -309,14 +309,14 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:WhosOn Client"
-        "ProductCode" = "8:{3D31369C-E7E7-4BEF-9DAE-1FA1345A3DF1}"
-        "PackageCode" = "8:{93E69754-A7A1-4C6A-95BC-8E641784DC1C}"
+        "ProductCode" = "8:{F12188AB-8E28-4CFD-A2AB-78BD55941770}"
+        "PackageCode" = "8:{DC13674E-990F-46A9-A837-E2D5ACA80084}"
         "UpgradeCode" = "8:{DE2D5476-AE73-4723-AC1E-6E2C6D5F1847}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.2.1"
+        "ProductVersion" = "8:1.2.2"
         "Manufacturer" = "8:BMC CompDept"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

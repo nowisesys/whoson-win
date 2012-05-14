@@ -8,6 +8,11 @@ application suite that together forms an centralized logon accounting service.
    You need to install either whoson-asp or whoson-php on an web server to use these 
    applications.
 
+** CONFIGURATION:
+
+   The application settings are configured in whoson.exe.config. The default configuration
+   is setup to use a WhosOn SOAP service on localhost. At least change the endpoint URL.
+   
 ** BUFFER SIZES:
 
    The default size of buffers are rather small, you might need to adjust these to
