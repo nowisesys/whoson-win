@@ -58,6 +58,15 @@ namespace WhosOn.Client
             }
         }
 
+        void Report(EndpointNotFoundException exception)
+        {
+            Report((Exception)exception);
+            Console.Error.WriteLine();
+            Console.Error.WriteLine(
+                ProgramInfo.ProgramName + ": Open the file " + 
+                ProgramInfo.ProgramName + ".config and configure the SOAP service endpoint.");
+        }
+
         void Parse(string[] args)
         {
             options.Parse(args);
@@ -88,6 +97,10 @@ namespace WhosOn.Client
                         Uninstall();
                         break;
                 }
+            }
+            catch (EndpointNotFoundException exception)
+            {
+                Report(exception);
             }
             catch (Win32Exception exception)
             {
