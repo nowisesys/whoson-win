@@ -1,7 +1,8 @@
+
 This is the client side application for the whoson web service. It is part of 
 an application suite that together forms an centralized logon accounting service.
 
-   See http://it.bmc.uu.se/andlov/proj/whoson for more information.
+See http://it.bmc.uu.se/andlov/proj/whoson for more information.
 
 ** SERVER SIDE:
 

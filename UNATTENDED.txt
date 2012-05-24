@@ -1,10 +1,25 @@
 The application can be installed in unattended mode, bypassing the license 
 agreement and using default options.
 
-  msiexec /quiet /i setup.exe          # background
-  msiexec /passive /qb /i setup.exe    # visible
+** SILENT MODE:
 
-In either mode, the DOS-window will popup when the whoson application is 
-runned with the -r option to register the eventlog source.
+   o) msiexec /quiet /i setup.msi          # background
+   o) msiexec /passive /qb /i setup.msi    # visible
+
+   During installation a MSDOS window will open as the whoson.exe application
+   is runned with the -r option to register itself as an eventlog source.
+
+** CUSTOM PROPERTY VALUES:
+
+   These PROPERTY=VALUE are supported:
+
+   o) SOAP_ENDPOINT - Customize the WhosOn SOAP service endpoint.
+   o) TARGETDIR     - Destination directory for installation.
+   
+   Example:
+   
+   o) msiexec /quiet /i setup.msi \
+              SOAP_ENDPOINT="http://localhost/whoson" \
+              TARGETDIR="C:\Windows\System32"
 
 // Anders Lövgren, 2012-03-28
