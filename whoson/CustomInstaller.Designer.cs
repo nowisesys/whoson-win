@@ -1,4 +1,4 @@
-﻿namespace WhosOn.Client
+﻿namespace WhosOn.Client.Installer
 {
     partial class CustomInstaller
     {
