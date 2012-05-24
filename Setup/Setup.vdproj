@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_7D288C2F2754CBF27B4C522AEAFA58AD"
+        "MsmKey" = "8:_650C579F2205457C9587AD5DA71C70DE"
         "OwnerKey" = "8:_CED66D656BE64ED8834EA3FD7643D2F1"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -46,7 +46,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_7D288C2F2754CBF27B4C522AEAFA58AD"
+        "OwnerKey" = "8:_650C579F2205457C9587AD5DA71C70DE"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -131,6 +131,20 @@
     {
         "CustomAction"
         {
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_3599A1A2DC08459C84324F34F2CDCE82"
+            {
+            "Name" = "8:Primary output from whoson (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_CED66D656BE64ED8834EA3FD7643D2F1"
+            "FileType" = "3:2"
+            "InstallAction" = "3:4"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_C0BB2B1A_9028_48A7_BC74_597A5BD42F68"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:"
+            }
             "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_6F11D7A788FB41089ED26CAA4058E9AA"
             {
             "Name" = "8:Primary output from whoson (Active)"
@@ -143,7 +157,21 @@
             "Sequence" = "3:1"
             "Identifier" = "8:_D24124C8_AA80_40B6_BE02_3560F66C19AC"
             "InstallerClass" = "11:TRUE"
-            "CustomActionData" = "8:/DESTDIR=\"[TARGETDIR]\\\" /SOAP_ENDPOINT=\"[EDITA1]\""
+            "CustomActionData" = "8:/LogFile=\"C:\\Windows\\Temp\\whoson.log\" /DestDir=\"[TARGETDIR]\\\" /SoapEndpointExec=\"[SOAP_ENDPOINT]\" /SoapEndpointUser=\"[EDITA1]\""
+            }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_DBC2CDF851444996A46D0C25BD72EDFD"
+            {
+            "Name" = "8:Primary output from whoson (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_CED66D656BE64ED8834EA3FD7643D2F1"
+            "FileType" = "3:2"
+            "InstallAction" = "3:2"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_80E4CCB2_4AF8_481B_9118_A431E6E7CD7E"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:"
             }
             "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_EE147C4F0F12451FA3409ED730D90754"
             {
@@ -182,18 +210,13 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7D288C2F2754CBF27B4C522AEAFA58AD"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_650C579F2205457C9587AD5DA71C70DE"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:libwhoson, Version=1.2.4526.1465, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:libwhoson, Version=1.2.4527.27337, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_7D288C2F2754CBF27B4C522AEAFA58AD"
-                    {
-                    "Name" = "8:libwhoson.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:libwhoson.dll"
             "TargetName" = "8:"
@@ -309,14 +332,14 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:WhosOn Client"
-        "ProductCode" = "8:{9A50D64F-DA02-4216-9DDA-A073DB8CEAB2}"
-        "PackageCode" = "8:{564B4AF5-BC48-47AD-95BC-48F66D72AAFA}"
+        "ProductCode" = "8:{09488B59-1DDF-43E8-96E4-09FF1781D6B0}"
+        "PackageCode" = "8:{06C0C9C3-B4D8-411B-B152-F6D5CCB7E86F}"
         "UpgradeCode" = "8:{DE2D5476-AE73-4723-AC1E-6E2C6D5F1847}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.2.3"
+        "ProductVersion" = "8:1.2.4"
         "Manufacturer" = "8:BMC CompDept"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -1133,7 +1156,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_CED66D656BE64ED8834EA3FD7643D2F1"
             {
-            "SourcePath" = "8:..\\whoson\\obj\\Debug\\whoson.exe"
+            "SourcePath" = "8:..\\whoson\\obj\\Release\\whoson.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_11A274B401044337B196D4A25EB17997"
