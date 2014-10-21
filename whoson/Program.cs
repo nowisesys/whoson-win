@@ -191,11 +191,19 @@ namespace WhosOn.Client
         {
             Account account = new Account();
 
-            EventLog.WriteEntry(
-                ProgramInfo.Product,
-                string.Format("User {0}\\{1} logged on", account.Domain, account.UserName),
-                EventLogEntryType.Information,
-                528);
+            try
+            {
+                EventLog.WriteEntry(
+                    ProgramInfo.Product,
+                    string.Format("User {0}\\{1} logged on", account.Domain, account.UserName),
+                    EventLogEntryType.Information,
+                    528
+                );
+            }
+            catch (System.Security.SecurityException exception)
+            {
+                Report(exception);
+            }
 
             LogonEventProxy proxy = new LogonEventProxy(account);
             LogonEventAdapter adapter = new LogonEventAdapter(this.options.Credentials);
@@ -211,11 +219,19 @@ namespace WhosOn.Client
         {
             Account account = new Account();
 
-            EventLog.WriteEntry(
-                ProgramInfo.Product,
-                string.Format("User {0}\\{1} logged off", account.Domain, account.UserName),
-                EventLogEntryType.Information,
-                528);
+            try
+            {
+                EventLog.WriteEntry(
+                    ProgramInfo.Product,
+                    string.Format("User {0}\\{1} logged off", account.Domain, account.UserName),
+                    EventLogEntryType.Information,
+                    528
+                );
+            }
+            catch (System.Security.SecurityException exception)
+            {
+                Report(exception);
+            }
 
             LogonEventAdapter adapter = new LogonEventAdapter(this.options.Credentials);
             LogonEvent record = adapter.Find(account);
