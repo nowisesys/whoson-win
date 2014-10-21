@@ -21,10 +21,13 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Data;
 using System.ServiceModel;
+using System.ServiceModel.Security;
+using System.ServiceModel.Description;
 
 using WhosOn.Library;
 using WhosOn.Library.LogonAccountingServiceReference;
 using WhosOn.Client;
+using System.ServiceModel.Channels;
 
 namespace WhosOn.Client
 {
@@ -35,7 +38,7 @@ namespace WhosOn.Client
     class Program
     {
         private ProgramOptions options = new ProgramOptions();
-
+        
         void Report(Exception exception)
         {
             if (options.Verbose)
@@ -141,7 +144,7 @@ namespace WhosOn.Client
         /// </summary>
         void Close()
         {
-            LogonEventAdapter adapter = new LogonEventAdapter();
+            LogonEventAdapter adapter = new LogonEventAdapter(this.options.Credentials);
             List<LogonEvent> events = adapter.Find(options.Filter, options.Match);
 
             foreach (LogonEvent record in events)
@@ -155,7 +158,8 @@ namespace WhosOn.Client
         /// </summary>
         void List()
         {
-            LogonEventAdapter adapter = new LogonEventAdapter();
+            LogonEventAdapter adapter = new LogonEventAdapter(this.options.Credentials);
+
             List<LogonEvent> events = adapter.Find(options.Filter, options.Match);
             ProgramOutput output = new ProgramOutput();
 
@@ -194,7 +198,7 @@ namespace WhosOn.Client
                 528);
 
             LogonEventProxy proxy = new LogonEventProxy(account);
-            LogonEventAdapter adapter = new LogonEventAdapter();
+            LogonEventAdapter adapter = new LogonEventAdapter(this.options.Credentials);
             proxy.Add(adapter);
         }
 
@@ -213,7 +217,7 @@ namespace WhosOn.Client
                 EventLogEntryType.Information,
                 528);
 
-            LogonEventAdapter adapter = new LogonEventAdapter();
+            LogonEventAdapter adapter = new LogonEventAdapter(this.options.Credentials);
             LogonEvent record = adapter.Find(account);
             adapter.Close(record.EventID);
         }

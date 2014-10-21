@@ -77,7 +77,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
-    <None Include="Service References\LogonAccountingServiceReference\LogonAccountingService.wsdl" />
+    <None Include="Service References\LogonAccountingServiceReference\item.wsdl" />
     <None Include="Service References\LogonAccountingServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

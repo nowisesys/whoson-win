@@ -1,0 +1,34 @@
+
+        -----------------------------
+         Authentication (HTTP basic)
+        -----------------------------
+
+
+The default whoson.exe.config is prepared for Basic HTTP authentication over an
+SSL-connection (HTTPS):
+
+        <security mode="Transport">
+            <transport clientCredentialType="Basic" proxyCredentialType="None" realm="" />
+            <message clientCredentialType="UserName" algorithmSuite="Default" />
+        </security>
+      
+        <endpoint address="https://it.bmc.uu.se/whoson/compdept/"
+                ...
+
+To use non-authenticatied mode, change the security mode like this:
+
+          <security mode="None">
+            <transport clientCredentialType="None" proxyCredentialType="None" realm="" />
+            <message clientCredentialType="UserName" algorithmSuite="Default" />
+          </security>
+
+To use Windows authentication using logged on user impersonation on server
+side (required an ASP.NET endpoint), change client credential type for the
+message:
+
+          <security mode="Transport">
+            <transport clientCredentialType="Basic" proxyCredentialType="None" realm="" />
+            <message clientCredentialType="Windows" algorithmSuite="Default" />
+          </security>
+
+// Anders Lövgren, 2014-10-21

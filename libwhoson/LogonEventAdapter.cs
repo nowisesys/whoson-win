@@ -18,6 +18,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.ServiceModel.Security;
+using System.ServiceModel.Description;
 
 using WhosOn.Library.LogonAccountingServiceReference;
 
@@ -28,6 +30,12 @@ namespace WhosOn.Library
         public LogonEventAdapter()
         {
             this.proxy = new LogonAccountingServiceSoapClient();
+        }
+
+        public LogonEventAdapter(ClientCredentials credentials)
+        {
+                this.proxy = new LogonAccountingServiceSoapClient();
+                SetClientCredentials(credentials);
         }
 
         public LogonEventAdapter(LogonAccountingServiceSoapClient proxy)
@@ -100,6 +108,24 @@ namespace WhosOn.Library
         {
             Account account = new Account();
             return Find(account);
+        }
+
+        public void SetClientCredentials(ClientCredentials credentials)
+        {
+            if (credentials != null)
+            {
+                if (credentials.UserName.UserName != null)
+                {
+                    UserNamePasswordClientCredential cred = this.proxy.ClientCredentials.UserName;
+                    cred.UserName = credentials.UserName.UserName;
+                    cred.Password = credentials.UserName.Password;
+                }
+                else
+                {
+                    WindowsClientCredential cred = this.proxy.ClientCredentials.Windows;
+                    cred.AllowedImpersonationLevel = System.Security.Principal.TokenImpersonationLevel.Impersonation;
+                }
+            }
         }
 
         private LogonAccountingServiceSoapClient proxy;

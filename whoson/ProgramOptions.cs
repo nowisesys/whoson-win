@@ -19,6 +19,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Diagnostics;
+using System.ServiceModel.Security;
+using System.ServiceModel.Description;
 
 using WhosOn.Library;
 using WhosOn.Library.LogonAccountingServiceReference;
@@ -102,6 +104,11 @@ namespace WhosOn.Client
             return format;
         }
 
+        public ClientCredentials Credentials
+        {
+            get { return credentials; }
+        }
+
         public bool Verbose
         {
             get { return verbose; }
@@ -152,6 +159,10 @@ namespace WhosOn.Client
             Console.WriteLine("Miscellanous:");
             Console.WriteLine("  -r,--register:    Register eventlog source.");
             Console.WriteLine("  -u,--uninstall:   Remove eventlog source.");
+            Console.WriteLine("Authentication:");
+            Console.WriteLine("  -U username:      Use username for HTTP basic authentication.");
+            Console.WriteLine("  -P password:      Use password for HTTP basic authentication.");
+            Console.WriteLine("  -W,--Windows:     Use Windows credentials for authentication.");
             Console.WriteLine();
             Console.WriteLine("Notes:");
             Console.WriteLine("1. The --between, --before and --after is limited to datetime (--start/--end) and ID (--first/--last) filtering.");
@@ -416,6 +427,44 @@ namespace WhosOn.Client
                         reason = Reason.Uninstall;
                         break;
 
+                    //
+                    // Authentication:
+                    // 
+                    case "-U":
+                        if (credentials == null)
+                        {
+                            credentials = new ClientCredentials();
+                        }
+                        if (option.HasValue)
+                        {
+                            credentials.UserName.UserName = option.Value;
+                        }
+                        else
+                        {
+                            credentials.UserName.UserName = args[++i];
+                        }
+                        break;
+                    case "-P":
+                        if (credentials == null)
+                        {
+                                credentials = new ClientCredentials();
+                        }
+                        if (option.HasValue)
+                        {
+                            credentials.UserName.Password = option.Value;
+                        }
+                        else
+                        {
+                            credentials.UserName.Password = args[++i];
+                        }
+                        break;
+                    case "-W":
+                    case "--Windows":
+                        if (credentials == null)
+                        {
+                                credentials = new ClientCredentials();
+                        }
+                        break;
                     default:
                         throw new ArgumentException("Unknown option '" + args[i] + "'");
                 }
@@ -447,6 +496,7 @@ namespace WhosOn.Client
         private LogonEvent filter = new LogonEvent();
         private LogonEventMatch match = LogonEventMatch.Exact;
         private bool verbose = false;
+        private ClientCredentials credentials = null;
 
     }
 }
