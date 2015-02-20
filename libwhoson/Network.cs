@@ -1,5 +1,5 @@
 ﻿// WhosOn Client Side Application
-// Copyright (C) 2011-2012 Anders Lövgren, Computing Department at BMC, Uppsala University
+// Copyright (C) 2011-2012,2015 Anders Lövgren, Computing Department at BMC, Uppsala University
 // 
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by

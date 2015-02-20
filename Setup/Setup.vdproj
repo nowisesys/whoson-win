@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_650C579F2205457C9587AD5DA71C70DE"
+        "MsmKey" = "8:_32F664B8EED6245211CEDFA9E4DA7640"
         "OwnerKey" = "8:_CED66D656BE64ED8834EA3FD7643D2F1"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -33,7 +33,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_D5204652ACF244D3B70D6F4853B0C3E7"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_DD02FDFC851A4FC6946F97B885AFBFCE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_EEF030A89A1A42A2BB735D02C2EA6E3C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -46,7 +58,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_650C579F2205457C9587AD5DA71C70DE"
+        "OwnerKey" = "8:_32F664B8EED6245211CEDFA9E4DA7640"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -210,13 +222,18 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_650C579F2205457C9587AD5DA71C70DE"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_32F664B8EED6245211CEDFA9E4DA7640"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:libwhoson, Version=1.2.4527.27337, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:libwhoson, Version=1.3.5529.36126, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_32F664B8EED6245211CEDFA9E4DA7640"
+                    {
+                    "Name" = "8:libwhoson.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:libwhoson.dll"
             "TargetName" = "8:"
@@ -256,10 +273,50 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D5204652ACF244D3B70D6F4853B0C3E7"
+            {
+            "SourcePath" = "8:..\\UNATTENDED.txt"
+            "TargetName" = "8:UNATTENDED.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_11A274B401044337B196D4A25EB17997"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DD02FDFC851A4FC6946F97B885AFBFCE"
             {
             "SourcePath" = "8:..\\COPYING.rtf"
             "TargetName" = "8:COPYING.rtf"
+            "Tag" = "8:"
+            "Folder" = "8:_11A274B401044337B196D4A25EB17997"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EEF030A89A1A42A2BB735D02C2EA6E3C"
+            {
+            "SourcePath" = "8:..\\AUTHENTICATION.txt"
+            "TargetName" = "8:AUTHENTICATION.txt"
             "Tag" = "8:"
             "Folder" = "8:_11A274B401044337B196D4A25EB17997"
             "Condition" = "8:"
@@ -333,7 +390,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:WhosOn Client"
         "ProductCode" = "8:{09488B59-1DDF-43E8-96E4-09FF1781D6B0}"
-        "PackageCode" = "8:{06C0C9C3-B4D8-411B-B152-F6D5CCB7E86F}"
+        "PackageCode" = "8:{5998FBB0-3643-46C5-81CE-4D4CED476528}"
         "UpgradeCode" = "8:{DE2D5476-AE73-4723-AC1E-6E2C6D5F1847}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"

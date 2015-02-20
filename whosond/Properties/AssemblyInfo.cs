@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Uppsala University")]
 [assembly: AssemblyProduct("whosond")]
-[assembly: AssemblyCopyright("Copyright © 2011 Anders Lövgren (QNET/Compdept BMC)")]
+[assembly: AssemblyCopyright("Copyright © 2011-2015 Anders Lövgren (QNET/Compdept BMC)")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
