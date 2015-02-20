@@ -34,7 +34,9 @@ namespace WhosOn.Library
                 {
                     continue;
                 }
-                if (iface.NetworkInterfaceType != NetworkInterfaceType.Loopback)
+                if (iface.NetworkInterfaceType != NetworkInterfaceType.Loopback &&
+                    iface.GetPhysicalAddress() != PhysicalAddress.None && 
+                    iface.GetPhysicalAddress().ToString().Length != 0)
                 {
                     this.iface = iface;
                     break;
