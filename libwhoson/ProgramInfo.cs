@@ -20,12 +20,12 @@ using System.Linq;
 using System.Text;
 using System.Reflection;
 
-namespace WhosOn.Client
+namespace WhosOn.Library
 {
     /// <summary>
     /// Utility class providing static application information.
     /// </summary>
-    class ProgramInfo
+    public class ProgramInfo
     {
         /// <summary>
         /// Get command line program name.
@@ -39,13 +39,26 @@ namespace WhosOn.Client
         }
 
         /// <summary>
+        /// Get assembly title from manifest.
+        /// </summary>
+        public static string Title
+        {
+            get
+            {
+                Assembly assembly = Assembly.GetCallingAssembly();
+                AssemblyTitleAttribute attr = (AssemblyTitleAttribute)assembly.GetCustomAttributes(typeof(AssemblyTitleAttribute), true)[0];
+                return attr.Title;
+            }
+        }
+
+        /// <summary>
         /// Get assembly description from manifest.
         /// </summary>
         public static string Description
         {
             get
             {
-                Assembly assembly = Assembly.GetExecutingAssembly();
+                Assembly assembly = Assembly.GetCallingAssembly();
                 AssemblyDescriptionAttribute attr = (AssemblyDescriptionAttribute)assembly.GetCustomAttributes(typeof(AssemblyDescriptionAttribute), true)[0];
                 return attr.Description;
             }
@@ -58,7 +71,7 @@ namespace WhosOn.Client
         {
             get
             {
-                Assembly assembly = Assembly.GetExecutingAssembly();
+                Assembly assembly = Assembly.GetCallingAssembly();
                 AssemblyCopyrightAttribute attr = (AssemblyCopyrightAttribute)assembly.GetCustomAttributes(typeof(AssemblyCopyrightAttribute), true)[0];
                 return attr.Copyright;
             }
@@ -71,7 +84,7 @@ namespace WhosOn.Client
         {
             get
             {
-                Assembly assembly = Assembly.GetExecutingAssembly();
+                Assembly assembly = Assembly.GetCallingAssembly();
                 AssemblyProductAttribute attr = (AssemblyProductAttribute)assembly.GetCustomAttributes(typeof(AssemblyProductAttribute), true)[0];
                 return attr.Product;
             }
@@ -84,7 +97,7 @@ namespace WhosOn.Client
         {
             get
             {
-                Assembly assembly = Assembly.GetExecutingAssembly();
+                Assembly assembly = Assembly.GetCallingAssembly();
                 AssemblyFileVersionAttribute attr = (AssemblyFileVersionAttribute)assembly.GetCustomAttributes(typeof(AssemblyFileVersionAttribute), true)[0];
                 return attr.Version;
             }

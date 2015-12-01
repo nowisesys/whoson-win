@@ -35,4 +35,17 @@ See http://it.bmc.uu.se/andlov/proj/whoson for more information.
 
       whoson.exe -l -a -F
 
+** SERVICE:
+
+   It's also possible to run whoson as a Windows service:
+
+   o) Register service:
+
+      whosond.exe -i -U username -P secret	// HTTP basic auth
+      whosond.exe -i -W				// Windows builtin logon
+
+   The service is configured in whosond.exe.config similar to whoson.exe, the
+   standalone client.
+       
+
 // Anders Lövgren, 2011-10-17

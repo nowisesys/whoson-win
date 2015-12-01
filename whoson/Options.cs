@@ -15,11 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Diagnostics;
-using System.ServiceModel.Security;
 using System.ServiceModel.Description;
 
 using WhosOn.Library;
@@ -28,51 +24,10 @@ using WhosOn.Library.LogonAccountingServiceReference;
 namespace WhosOn.Client
 {
 
-    class Option
-    {
-        private string key;
-        private string val;
-
-        public Option(string arg)
-        {
-            if (arg.Contains('='))
-            {
-                int pos = arg.IndexOf('=');
-                key = arg.Substring(0, pos);
-                val = arg.Substring(pos + 1);
-            }
-            else
-            {
-                key = arg;
-                val = null;
-            }
-        }
-
-        public bool HasValue
-        {
-            get { return val != null; }
-        }
-
-        public string Value
-        {
-            get { return val; }
-        }
-
-        public string Key
-        {
-            get { return key; }
-        }
-
-        public static Option GetOption(string arg)
-        {
-            return new Option(arg);
-        }
-    }
-
     /// <summary>
     /// An helper class for parsing the command line options.
     /// </summary>
-    public class ProgramOptions
+    public class Options
     {
         public enum Reason
         {
@@ -194,7 +149,7 @@ namespace WhosOn.Client
             }
             for (int i = 0; i < args.Length; ++i)
             {
-                Option option = Option.GetOption(args[i]);
+                ProgramOption option = ProgramOption.Create(args[i]);
                 switch (option.Key)
                 {
                     case "-v":

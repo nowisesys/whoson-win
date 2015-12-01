@@ -55,6 +55,8 @@
     <Compile Include="LogonEventAdapter.cs" />
     <Compile Include="LogonEventProxy.cs" />
     <Compile Include="Network.cs" />
+    <Compile Include="ProgramInfo.cs" />
+    <Compile Include="ProgramOption.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\LogonAccountingServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>

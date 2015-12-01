@@ -1,5 +1,5 @@
 ﻿// WhosOn Client Side Application
-// Copyright (C) 2011-2012 Anders Lövgren, Computing Department at BMC, Uppsala University
+// Copyright (C) 2011-2015 Anders Lövgren, Computing Department at BMC, Uppsala University
 // 
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -15,26 +15,99 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Configuration.Install;
+using System.Reflection;
 using System.ServiceProcess;
-using System.Text;
+
+using WhosOn.Library;
+using System.Collections.Generic;
 
 namespace WhosOn.Service
 {
-    static class Program
+    class Program
     {
+        private Options options = new Options();
+
+        void Report(Exception exception)
+        {
+            Console.Error.WriteLine(
+                ProgramInfo.ProgramName + ": (" +
+                exception.Source + "): " +
+                exception.GetType() + ": " +
+                exception.Message + "\n" +
+                exception.StackTrace
+                );
+        }
+
+        void Parse(string[] args)
+        {
+            options.Parse(args);
+        }
+
+        public void Process()
+        {
+            try
+            {
+                switch (options.GetReason())
+                {
+                    case Options.Reason.Install:
+                        Install();
+                        break;
+                    case Options.Reason.Remove:
+                        Remove();
+                        break;
+                    case Options.Reason.Service:
+                        Service();
+                        break;
+                }
+            }
+            catch (Exception exception)
+            {
+                Report(exception);
+            }
+        }
+
+        private void Install()
+        {
+            ServiceParameters parameters = new ServiceParameters(options.Credentials);
+            parameters.Add(Assembly.GetExecutingAssembly().Location);
+
+            ManagedInstallerClass.InstallHelper(parameters.ToArray());
+            Console.WriteLine("Service installed");
+        }
+
+        private void Remove()
+        {
+            ServiceParameters parameters = new ServiceParameters("/u");
+            parameters.Add(Assembly.GetExecutingAssembly().Location);
+
+            ManagedInstallerClass.InstallHelper(parameters.ToArray());
+            Console.WriteLine("Service removed");
+        }
+
+        private void Service()
+        {
+            Service service = new Service();
+            service.ServiceName = ProgramInfo.Product;
+            service.Credentials = options.Credentials;
+            ServiceBase.Run(service);
+        }
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        static void Main()
+        static void Main(string[] args)
         {
-            ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[] 
-			{ 
-				new Service1() 
-			};
-            ServiceBase.Run(ServicesToRun);
+            Program program = new Program();
+            try
+            {
+                program.Parse(args);
+                program.Process();
+            }
+            catch (ArgumentException exception)
+            {
+                program.Report(exception);
+            }
         }
     }
 }

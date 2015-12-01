@@ -15,7 +15,7 @@ SSL-connection (HTTPS):
         <endpoint address="https://it.bmc.uu.se/whoson/compdept/"
                 ...
 
-To use non-authenticatied mode, change the security mode like this:
+To use non-authenticated mode, change the security mode like this:
 
           <security mode="None">
             <transport clientCredentialType="None" proxyCredentialType="None" realm="" />

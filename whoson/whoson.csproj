@@ -79,9 +79,8 @@
       <DependentUpon>CustomInstaller.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="ProgramInfo.cs" />
-    <Compile Include="ProgramOptions.cs" />
-    <Compile Include="ProgramOutput.cs" />
+    <Compile Include="Options.cs" />
+    <Compile Include="Output.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -89,9 +88,6 @@
       <Project>{73EEA3C1-4FFD-4DA6-AF22-08693A080C69}</Project>
       <Name>libwhoson</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -1,5 +1,5 @@
 ﻿// WhosOn Client Side Application
-// Copyright (C) 2011-2012 Anders Lövgren, Computing Department at BMC, Uppsala University
+// Copyright (C) 2011-2015 Anders Lövgren, Computing Department at BMC, Uppsala University
 // 
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ namespace WhosOn.Client
     /// </summary>
     class Program
     {
-        private ProgramOptions options = new ProgramOptions();
+        private Options options = new Options();
         
         void Report(Exception exception)
         {
@@ -81,22 +81,22 @@ namespace WhosOn.Client
             {
                 switch (options.GetReason())
                 {
-                    case ProgramOptions.Reason.Login:
+                    case Options.Reason.Login:
                         Login();
                         break;
-                    case ProgramOptions.Reason.Logout:
+                    case Options.Reason.Logout:
                         Logout();
                         break;
-                    case ProgramOptions.Reason.List:
+                    case Options.Reason.List:
                         List();
                         break;
-                    case ProgramOptions.Reason.Close:
+                    case Options.Reason.Close:
                         Close();
                         break;
-                    case ProgramOptions.Reason.Register:
+                    case Options.Reason.Register:
                         Register();
                         break;
-                    case ProgramOptions.Reason.Uninstall:
+                    case Options.Reason.Uninstall:
                         Uninstall();
                         break;
                 }
@@ -165,19 +165,19 @@ namespace WhosOn.Client
 
             switch (options.GetFormat())
             {
-                case ProgramOptions.Format.Compact:
+                case Options.Format.Compact:
                     output.SetFormat(new OutputFormatCompact());
                     output.Write(events);
                     break;
-                case ProgramOptions.Format.Human:
+                case Options.Format.Human:
                     output.SetFormat(new OutputFormatHuman());
                     output.Write(events);
                     break;
-                case ProgramOptions.Format.Tabbed:
+                case Options.Format.Tabbed:
                     output.SetFormat(new OutputFormatTabbed());
                     output.Write(events);
                     break;
-                case ProgramOptions.Format.XML:
+                case Options.Format.XML:
                     output.SetFormat(new OutputFormatXML());
                     output.Write(events);
                     break;

@@ -22,6 +22,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{58BA735A-5672-416B-A281-9C4F4F83CD27}"
+	ProjectSection(ProjectDependencies) = postProject
+		{73EEA3C1-4FFD-4DA6-AF22-08693A080C69} = {73EEA3C1-4FFD-4DA6-AF22-08693A080C69}
+		{FCFA75F2-502A-4128-BDAB-EA09EED1397B} = {FCFA75F2-502A-4128-BDAB-EA09EED1397B}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
