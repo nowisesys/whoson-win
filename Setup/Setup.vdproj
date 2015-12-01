@@ -15,8 +15,20 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_32F664B8EED6245211CEDFA9E4DA7640"
+        "MsmKey" = "8:_522F4562D0F54756A7D276298E71AB1D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_52DE4CD37C9276E127A7EDD9EF604AE4"
         "OwnerKey" = "8:_CED66D656BE64ED8834EA3FD7643D2F1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_52DE4CD37C9276E127A7EDD9EF604AE4"
+        "OwnerKey" = "8:_522F4562D0F54756A7D276298E71AB1D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -58,7 +70,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_32F664B8EED6245211CEDFA9E4DA7640"
+        "OwnerKey" = "8:_522F4562D0F54756A7D276298E71AB1D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_52DE4CD37C9276E127A7EDD9EF604AE4"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -222,14 +240,14 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_32F664B8EED6245211CEDFA9E4DA7640"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_52DE4CD37C9276E127A7EDD9EF604AE4"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:libwhoson, Version=1.3.5529.36126, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:libwhoson, Version=1.4.5813.10410, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_32F664B8EED6245211CEDFA9E4DA7640"
+                    "_52DE4CD37C9276E127A7EDD9EF604AE4"
                     {
                     "Name" = "8:libwhoson.dll"
                     "Attributes" = "3:512"
@@ -390,7 +408,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:WhosOn Client"
         "ProductCode" = "8:{09488B59-1DDF-43E8-96E4-09FF1781D6B0}"
-        "PackageCode" = "8:{5998FBB0-3643-46C5-81CE-4D4CED476528}"
+        "PackageCode" = "8:{CF580DCE-4F65-43CB-A557-EE964C6FA28C}"
         "UpgradeCode" = "8:{DE2D5476-AE73-4723-AC1E-6E2C6D5F1847}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
@@ -1211,6 +1229,34 @@
         }
         "ProjectOutput"
         {
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_522F4562D0F54756A7D276298E71AB1D"
+            {
+            "SourcePath" = "8:..\\whosond\\obj\\Release\\whosond.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_11A274B401044337B196D4A25EB17997"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:Built"
+            "OutputProjectGuid" = "8:{FCFA75F2-502A-4128-BDAB-EA09EED1397B}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_CED66D656BE64ED8834EA3FD7643D2F1"
             {
             "SourcePath" = "8:..\\whoson\\obj\\Release\\whoson.exe"
