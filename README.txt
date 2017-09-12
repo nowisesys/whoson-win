@@ -15,10 +15,6 @@ See http://it.bmc.uu.se/andlov/proj/whoson for more information.
    configuration is setup to use a WhosOn SOAP service on localhost. At least 
    change the endpoint URL.
 
-   The client must be registered as an event source. Run this command as administator:
-
-      whoson.exe -r
-   
 ** BUFFER SIZES:
 
    The default size of buffers are rather small, you might need to adjust these
