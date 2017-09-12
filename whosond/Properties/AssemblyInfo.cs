@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Uppsala University")]
 [assembly: AssemblyProduct("whosond")]
-[assembly: AssemblyCopyright("Copyright © 2011-2015 Anders Lövgren (QNET/Compdept BMC)")]
+[assembly: AssemblyCopyright("Copyright © 2011-2017 Anders Lövgren (QNET/Compdept BMC)")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -33,4 +33,4 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.4.*")]
-[assembly: AssemblyFileVersion("1.4.0.0")]
+[assembly: AssemblyFileVersion("1.4.1.0")]

@@ -19,10 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://it.bmc.uu.se/whoson/compdept/?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://jailbreak.bmc.uu.se/whoson/?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="item.wsdl" MetadataType="Wsdl" ID="6e7711c3-4abd-4175-a2d2-536ff225f6bc" SourceId="1" SourceUrl="https://it.bmc.uu.se/whoson/compdept/?wsdl" />
+    <MetadataFile FileName="item1.wsdl" MetadataType="Wsdl" ID="57491811-fea5-47fc-92a5-48458409fe7b" SourceId="1" SourceUrl="http://jailbreak.bmc.uu.se/whoson/?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -1,6 +1,16 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C02592D7-7BD1-499A-8A58-3240C6E5D2C4}"
+	ProjectSection(SolutionItems) = preProject
+		AUTHENTICATION.txt = AUTHENTICATION.txt
+		COPYING.rtf = COPYING.rtf
+		README.txt = README.txt
+		UNATTENDED.txt = UNATTENDED.txt
+	EndProjectSection
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "whoson", "whoson\whoson.csproj", "{147BADEC-75DF-4537-8F6D-89F1E2F1B56F}"
 	ProjectSection(ProjectDependencies) = postProject
 		{73EEA3C1-4FFD-4DA6-AF22-08693A080C69} = {73EEA3C1-4FFD-4DA6-AF22-08693A080C69}
@@ -11,14 +21,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "whosond", "whosond\whosond.csproj", "{FCFA75F2-502A-4128-BDAB-EA09EED1397B}"
 	ProjectSection(ProjectDependencies) = postProject
 		{73EEA3C1-4FFD-4DA6-AF22-08693A080C69} = {73EEA3C1-4FFD-4DA6-AF22-08693A080C69}
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C02592D7-7BD1-499A-8A58-3240C6E5D2C4}"
-	ProjectSection(SolutionItems) = preProject
-		AUTHENTICATION.txt = AUTHENTICATION.txt
-		COPYING.rtf = COPYING.rtf
-		README.txt = README.txt
-		UNATTENDED.txt = UNATTENDED.txt
 	EndProjectSection
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{58BA735A-5672-416B-A281-9C4F4F83CD27}"
