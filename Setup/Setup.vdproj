@@ -70,13 +70,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D227A7F38D4D46058B613F895FD3EAAD"
+        "OwnerKey" = "8:_AC33303AE75744D1B775B9A777BE72CB"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AC33303AE75744D1B775B9A777BE72CB"
+        "OwnerKey" = "8:_D227A7F38D4D46058B613F895FD3EAAD"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -97,6 +97,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -113,6 +121,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -245,11 +261,6 @@
             "AssemblyAsmDisplayName" = "8:libwhoson, Version=1.4.6464.34020, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_9305755C966E50674400F8D5728274CE"
-                    {
-                    "Name" = "8:libwhoson.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:libwhoson.dll"
             "TargetName" = "8:"
@@ -373,7 +384,7 @@
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.4.1"
+        "ProductVersion" = "8:1.4.2"
         "Manufacturer" = "8:BMC CompDept"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
