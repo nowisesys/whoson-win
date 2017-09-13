@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  Client config for using Windows credentials for NTLM authentication. Enable "Windows Authentication"
+  in IIS 7 with NTLM provider.
+  -->
 <configuration>
   <system.net>
     <defaultProxy>
@@ -8,30 +12,25 @@
   <system.serviceModel>
     <bindings>
       <basicHttpBinding>
-        <binding name="LogonAccountingServiceSoap" 
-                 closeTimeout="00:01:00" openTimeout="00:01:00"
+        <binding name="LogonAccountingServiceSoap" closeTimeout="00:01:00" openTimeout="00:01:00"
                  receiveTimeout="00:10:00" sendTimeout="00:01:00" allowCookies="false"
                  bypassProxyOnLocal="true" hostNameComparisonMode="StrongWildcard"
                  maxBufferSize="4194304" maxBufferPoolSize="524288" maxReceivedMessageSize="4194304"
                  messageEncoding="Text" textEncoding="utf-8" transferMode="Buffered"
                  useDefaultWebProxy="False">
-          <readerQuotas maxDepth="32" 
-                        maxStringContentLength="8192" 
-                        maxArrayLength="16384"
-                        maxBytesPerRead="4096"
+          <readerQuotas maxDepth="32" maxStringContentLength="8192" maxArrayLength="16384" maxBytesPerRead="4096"
                         maxNameTableCharCount="16384"/>
-          <security mode="None">
-            <transport clientCredentialType="None" proxyCredentialType="None" realm=""/>
-            <message clientCredentialType="UserName" algorithmSuite="Default"/>
+          <security mode="Transport">
+            <transport clientCredentialType="Windows" />
           </security>
         </binding>
       </basicHttpBinding>
     </bindings>
     <client>
-      <endpoint address="http://server.example.com/whoson/" 
-                binding="basicHttpBinding" 
-                bindingConfiguration="LogonAccountingServiceSoap" 
-                contract="LogonAccountingServiceReference.LogonAccountingServiceSoap" 
+      <endpoint address="http://bmc-mtws5.bmcmediatek.uu.se/compdept/websvc/whoson/LogonAccountingService.asmx"
+                binding="basicHttpBinding"
+                bindingConfiguration="LogonAccountingServiceSoap"
+                contract="LogonAccountingServiceReference.LogonAccountingServiceSoap"
                 name="LogonAccountingServiceSoap"/>
     </client>
   </system.serviceModel>
