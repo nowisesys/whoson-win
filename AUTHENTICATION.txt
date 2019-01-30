@@ -32,4 +32,4 @@ to NTLM. On the IIS server, enable Windows Authentication on the ASP.NET endpoin
 Using Windows authentication enables impersonation of server process as the authenticated user.
 
 
-// Anders Lövgren, 2014-10-21
+// Anders LÃ¶vgren, 2014-10-21

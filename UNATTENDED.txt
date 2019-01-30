@@ -22,4 +22,4 @@ agreement and using default options.
               SOAP_ENDPOINT="http://localhost/whoson" \
               TARGETDIR="C:\Windows\System32"
 
-// Anders Lövgren, 2012-03-28
+// Anders LÃ¶vgren, 2012-03-28
