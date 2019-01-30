@@ -2,7 +2,7 @@
 This is the client side application for the whoson web service. It is part of 
 an application suite that together forms an centralized logon accounting service.
 
-See http://it.bmc.uu.se/andlov/proj/whoson for more information.
+See https://nowise.se/oss/whoson for more information.
 
 ** SERVER SIDE:
 
@@ -48,4 +48,4 @@ See http://it.bmc.uu.se/andlov/proj/whoson for more information.
    standalone client.
        
 
-// Anders Lövgren, 2011-10-17
+// Anders LÃ¶vgren, 2011-10-17
