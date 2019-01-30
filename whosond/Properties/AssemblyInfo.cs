@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("WhosOn Client Side Service")]
 [assembly: AssemblyDescription("Client side service for the whoson logon accounting program suite.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Uppsala University")]
+[assembly: AssemblyCompany("Nowise Systems")]
 [assembly: AssemblyProduct("whosond")]
-[assembly: AssemblyCopyright("Copyright © 2011-2017 Anders Lövgren (QNET/Compdept BMC)")]
+[assembly: AssemblyCopyright("Copyright © 2011-2019 Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -33,4 +33,4 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.4.*")]
-[assembly: AssemblyFileVersion("1.4.2.0")]
+[assembly: AssemblyFileVersion("1.4.3.0")]
