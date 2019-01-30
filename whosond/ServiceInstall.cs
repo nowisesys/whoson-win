@@ -1,7 +1,8 @@
 ﻿// WhosOn Client Side Application
-// Copyright (C) 2015 Anders Lövgren, Computing Department at BMC, Uppsala University
+//
+// Copyright (C) 2015-2018 Anders Lövgren, BMC-IT, Uppsala University
+// Copyright (C) 2018-2019 Anders Lövgren, Nowise Systems
 // 
-// This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
